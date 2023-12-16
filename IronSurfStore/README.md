@@ -6,7 +6,7 @@ Iron Surf Store
 
 ## Description
 
-E-comerce surf online store
+E-comerce surf online store.
 
 <br>
 
@@ -16,8 +16,14 @@ Projects
 
 ```json
 {
-  "title": "Surf Shop",
-  "description": "An e-commerce platform for surfers.",
+  "project": [
+    {
+      "id": 1,
+      "title": "Iron Surf",
+      "description": "An e-commerce platform for surfers."
+    }
+  ],
+
   "tasks": [
     {
       "projectId": 1,
@@ -52,6 +58,10 @@ Our own.
 
 ## Packages
 
+npm vite
+react router dom
+axios
+tailwind
 <br>
 
 ## Links
