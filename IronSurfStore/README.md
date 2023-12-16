@@ -65,6 +65,6 @@ Backend: [Repository Link]()
 
 ### Contributors
 
-FirstName LastName - [`<github-username>`](https://github.com/person1-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
+Guilherme Carvalho - [`<github-username>`](https://github.com/UltraPotatoCoder) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/guilherme-carvalho-0a3019270/)
 
-FirstName LastName - [`<github-username>`](https://github.com/person2-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
+Orlando Pedrazzoli - [`<github-username>`](https://github.com/Orlando-Pedrazzoli) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/orlandopedrazzoli/)
