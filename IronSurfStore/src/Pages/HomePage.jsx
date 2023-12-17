@@ -49,11 +49,8 @@ function HomePage() {
               </div>
               <hr />
               <div>
-                {/* ...todo o seu conteúdo existente... */}
-
-                {/* Rodapé */}
                 <footer className='footer'>
-                  <p>© 2023 Sua Empresa - Todos os direitos reservados</p>
+                  <p>© 2023 Iron Surf Store - Todos os direitos reservados</p>
                   <p>
                     <a href='/contato'>Contato</a>
                   </p>
