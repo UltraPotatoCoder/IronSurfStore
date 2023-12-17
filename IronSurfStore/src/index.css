@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   background-color: black;
 }
 
@@ -10,7 +13,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 10%;
+  padding: 10px 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,17 +25,78 @@
   color: white;
   text-decoration: none;
   display: inline-block;
-  margin-left: 35px;
+  margin-left: 20px;
 }
 
 .nav-logo {
   font-size: 25px;
-  padding-right: 500px;
+  flex-grow: 1;
 }
 
 .logo {
   background-color: transparent;
   border-radius: 10%;
   width: 100px;
-  margin: 0;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+.banner-text {
+  font-size: 30px;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  color: black;
+  padding: 5px;
+}
+
+.new-products h1,
+.best-sellers h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}
+
+.image-gallery {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.image-container {
+  width: 200px;
+  display: inline-block;
+  margin: 20px 40px;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.image-container p {
+  color: white;
+  margin-top: 10px;
+}
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
 }
