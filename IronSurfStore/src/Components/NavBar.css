@@ -1,0 +1,30 @@
+.navbar {
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.nav-logo {
+  font-size: 25px;
+  flex-grow: 1;
+}
+
+.logo {
+  background-color: transparent;
+  border-radius: 10%;
+  width: 100px;
+}
