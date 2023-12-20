@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <nav className='navbar'>
       <Link to='/' className='nav-logo'>
-        <img className='logo' src='/src/assets/img/logo white.png' alt='Logo' />
+        IRON SURF STORE
       </Link>
 
       <form onSubmit={handleSearchSubmit} className='search-form'>

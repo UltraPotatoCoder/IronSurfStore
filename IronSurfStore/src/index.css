@@ -32,6 +32,7 @@ body {
 }
 
 .banner-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: rgba(133, 121, 121, 0.7);
   font-size: 30px;
   font-weight: bolder;
@@ -42,9 +43,13 @@ body {
   padding: 5px;
   border-radius: 15px;
 }
+.social-media {
+  width: 10px;
+}
 
 .new-products h1,
 .best-sellers h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
   margin-top: 20px;
   color: white;
@@ -52,12 +57,12 @@ body {
 
 .image-gallery {
   text-align: center;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .image-container {
   background-color: white;
-  width: 300px;
+  width: 250px;
   border-radius: 15px;
   display: inline-block;
   margin: 20px 40px;
@@ -65,7 +70,7 @@ body {
 }
 
 .image-container img {
-  width: 70%;
+  width: 60%;
   height: auto;
 }
 

@@ -11,7 +11,7 @@ function HomePage() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            Facebook
+            <img src='/src/assets/img/facebook-circle-logo-24.png' alt='' />
           </a>
           <a
             href='https://instagram.com'
