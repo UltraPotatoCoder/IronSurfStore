@@ -1,51 +1,41 @@
+import './Navbar.css';
+import logo from '/src/assets/img/logo.png';
+import cart_icon from '../assets/img/cart_icon.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
 
 function Navbar() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleSearchChange = e => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSearchSubmit = e => {
-    e.preventDefault();
-
-    console.log('search:', searchTerm);
-  };
-
+  const [menu, setMenu] = useState('shop');
   return (
-    <nav className='navbar'>
-      <Link to='/' className='nav-logo'>
-        IRON SURF STORE
-      </Link>
-
-      <form onSubmit={handleSearchSubmit} className='search-form'>
-        <input
-          type='text'
-          placeholder='Search products...'
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className='search-input'
-        />
-        <button type='submit' className='search-button'>
-          <img src='/src/assets/img/search-icon.png' alt='search-icon' />
-        </button>
-      </form>
-      <Link to='/products' className='nav-links'>
-        Products
-      </Link>
-      <Link to='/about' className='nav-links'>
-        About
-      </Link>
-      <Link to='/contact' className='nav-links'>
-        Contact
-      </Link>
-      <Link to='/cart' className='nav-links'>
-        <img src='/src/assets/img/cart-icon.png' alt='cart-icon' />
-      </Link>
-    </nav>
+    <div className='navbar'>
+      <div className='nav-logo'>
+        <img src={logo} alt='logo' />
+        <p>IRON SURF STORE</p>
+      </div>
+      <ul className='nav-menu'>
+        <li>
+          <Link>Shop</Link>
+        </li>
+        <li>
+          <Link>Fins</Link>
+        </li>
+        <li>
+          <Link>Decks</Link>
+        </li>
+        <li>
+          <Link>Leashes</Link>
+        </li>
+      </ul>
+      <div className='nav-login-cart'>
+        <Link>
+          <button>Login</button>
+        </Link>
+        <Link>
+          <img src={cart_icon} alt='cart_icon' />
+        </Link>
+        <div className='nav-cart-count'>0</div>
+      </div>
+    </div>
   );
 }
 
