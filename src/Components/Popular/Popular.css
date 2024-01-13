@@ -1,0 +1,37 @@
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 90vh;
+}
+.popular h1 {
+  color: #171717;
+  font-size: 3rem;
+  font-weight: 600;
+}
+.popular hr {
+  width: 300px;
+  height: 6px;
+  border-radius: 10px;
+  background: #252525;
+}
+.popular-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Inicialmente quatro colunas */
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+}
+.popular-item img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+.popular-item h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
