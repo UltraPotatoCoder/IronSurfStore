@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import ProductPage from './Pages/ProductPage';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/cart' />
         <Route path='/login' element={<Login />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

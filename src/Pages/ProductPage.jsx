@@ -1,6 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import star_icon from '../assets/img/star_icon.png';
+import star_dull_icon from '../assets/img/star_dull_icon.png';
+import './CSS/ProductPage.css';
 
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app/products';
 
@@ -23,14 +26,46 @@ function ProductPage() {
   }, [itemId]);
 
   return (
-    <div>
+    <div className='product-page-container'>
       {oneItem && (
-        <div>
-          <img src={oneItem.image} alt={oneItem.name} className='oneItem' />
-          <h3>{oneItem.name}</h3>
-          <h3>{oneItem.description}</h3>
-          <h3>{oneItem.new_price}</h3>
-          <h3>{oneItem.old_price}</h3>
+        <div className='productdisplay'>
+          <div className='productdisplay-left'>
+            <div className='productdisplay-img-list'>
+              <img src={oneItem.image} />
+              <img src={oneItem.image} alt='' />
+            </div>
+            <div className='productdisplay-img'>
+              <img
+                className='productdisplay-main-img'
+                src={oneItem.image}
+                alt=''
+              />
+            </div>
+          </div>
+          <div className='productdisplay-right'>
+            <h1>{oneItem.name}</h1>
+            <div className='productdisplay-right-star'>
+              <img src={star_icon} alt='' />
+              <img src={star_icon} alt='' />
+              <img src={star_icon} alt='' />
+              <img src={star_icon} alt='' />
+              <img src={star_dull_icon} alt='' />
+              <p>(122)</p>
+            </div>
+            <div className='productdisplay-right-prices'>
+              <div className='productdisplay-right-price-old'>
+                €{oneItem.old_price}
+              </div>
+              <div className='productdisplay-right-price-new'>
+                €{oneItem.new_price}
+              </div>
+            </div>
+            <div className='productdisplay-right-description'>
+              <h3>Feautures</h3>
+              {oneItem.description}
+            </div>
+            <button>ADD TO CART</button>
+          </div>
         </div>
       )}
     </div>
