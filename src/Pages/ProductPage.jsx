@@ -25,6 +25,29 @@ function ProductPage() {
     getOneItem();
   }, [itemId]);
 
+  const handleAddToCart = async () => {
+    try {
+      const addToCartUrl = 'https://iron-surf-store.adaptable.app/cart';
+
+      const productId = oneItem.id;
+      const productImage = oneItem.image;
+      const productTitle = oneItem.name;
+      const productPrice = oneItem.price;
+
+      const response = await axios.post(addToCartUrl, {
+        productId: productId,
+        quantity: 1,
+        productImage: productImage,
+        productTitle: productTitle,
+        productPrice: productPrice,
+      });
+
+      console.log('Product added to cart:', response.data);
+    } catch (error) {
+      console.error('Error adding product to cart:', error);
+    }
+  };
+
   return (
     <div className='product-page-container'>
       {oneItem && (
@@ -64,7 +87,7 @@ function ProductPage() {
               <h3>Feautures</h3>
               {oneItem.description}
             </div>
-            <button>ADD TO CART</button>
+            <button onClick={handleAddToCart}>ADD TO CART</button>
           </div>
         </div>
       )}
