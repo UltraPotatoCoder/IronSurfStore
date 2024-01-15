@@ -38,18 +38,18 @@ function ProductPage() {
               <img
                 className='productdisplay-main-img'
                 src={oneItem.image}
-                alt=''
+                alt='oneItem image'
               />
             </div>
           </div>
           <div className='productdisplay-right'>
             <h1>{oneItem.name}</h1>
             <div className='productdisplay-right-star'>
-              <img src={star_icon} alt='' />
-              <img src={star_icon} alt='' />
-              <img src={star_icon} alt='' />
-              <img src={star_icon} alt='' />
-              <img src={star_dull_icon} alt='' />
+              <img src={star_icon} alt='star_icon' />
+              <img src={star_icon} alt='star_icon' />
+              <img src={star_icon} alt='star_icon' />
+              <img src={star_icon} alt='star_icon' />
+              <img src={star_dull_icon} alt='tar_dull_icon' />
               <p>(122)</p>
             </div>
             <div className='productdisplay-right-prices'>
