@@ -121,3 +121,7 @@
     gap: 10px;
   }
 }
+
+.cross-button {
+  cursor: pointer;
+}

@@ -32,7 +32,7 @@ function ProductPage() {
       const productId = oneItem.id;
       const productImage = oneItem.image;
       const productTitle = oneItem.name;
-      const productPrice = oneItem.price;
+      const productPrice = oneItem.new_price;
 
       const response = await axios.post(addToCartUrl, {
         productId: productId,

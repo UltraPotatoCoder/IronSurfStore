@@ -1,6 +1,7 @@
 import './CSS/Cart.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import remove_icon from '../assets/img/cart_cross_icon.png';
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app';
 
 function CartItems() {
@@ -45,10 +46,23 @@ function CartItems() {
         {cartItems &&
           cartItems.map(item => (
             <div key={item.id} className='cartitem'>
-              <p>{item.productTitle}</p>
-              <img src={item.productImage} alt='product image' />
-              <p>{item.quantity}</p>
-              <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
+              <div className='cartitems-format cartitems-format-name'>
+                <img
+                  src={item.productImage}
+                  alt='product image'
+                  className='carticon-product-icon'
+                />
+                <p>{item.productTitle}</p>
+                <p>€{item.new_price}</p>
+                <button className='cartitems-quantity'>{item.quantity}</button>
+                <p>€{item.new_price * item.quantity}</p>
+                <img
+                  onClick={() => handleRemoveItem(item.id)}
+                  src={remove_icon}
+                  alt='remove icon'
+                  className='cartitems-remove-icon'
+                />
+              </div>
             </div>
           ))}
       </div>
