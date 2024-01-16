@@ -32,17 +32,15 @@ function ProductPage() {
       const productId = oneItem.id;
       const productImage = oneItem.image;
       const productTitle = oneItem.name;
-      const productPrice = oneItem.new_price;
+      const productPrice = oneItem.new_price; // Ensure this is the correct price
 
-      const response = await axios.post(addToCartUrl, {
-        productId: productId,
+      await axios.post(addToCartUrl, {
+        productId,
+        productImage,
+        productTitle,
+        new_price: productPrice, // Send this as new_price
         quantity: 1,
-        productImage: productImage,
-        productTitle: productTitle,
-        productPrice: productPrice,
       });
-
-      console.log('Product added to cart:', response.data);
     } catch (error) {
       console.error('Error adding product to cart:', error);
     }

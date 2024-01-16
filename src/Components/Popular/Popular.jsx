@@ -38,36 +38,18 @@ function Popular() {
                   <img
                     className='itemImages'
                     src={item.image}
-                    alt={item.name}
+                    alt='item-image'
                   />
-                  <h3>{item.name}</h3>
                 </Link>
+                <p>{item.name}</p>
+                <div className='item-prices'>
+                  <div className='item-price-new'>€{item.new_price}</div>
+                  <div className='item-price-old'>€{item.old_price}</div>
+                </div>
               </div>
             );
           })}
       </div>
-      {/*       <div className='popular-item'>
-        {items &&
-          items
-            .filter(it => [1, 4, 6, 8, 9].includes(it.id))
-            .map(item => {
-              return (
-                <div key={item.id}>
-                  <Link
-                    style={{ textDecoration: 'none', color: 'black' }}
-                    to={`/products/${item.id}`}
-                  >
-                    <img
-                      className='itemImages'
-                      src={item.image}
-                      alt={item.name}
-                    />
-                    <h3>{item.name}</h3>
-                  </Link>
-                </div>
-              );
-            })}
-      </div> */}
     </div>
   );
 }

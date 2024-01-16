@@ -1,3 +1,4 @@
+/* Estilos gerais */
 .popular {
   display: flex;
   flex-direction: column;
@@ -5,33 +6,82 @@
   gap: 10px;
   height: 90vh;
 }
+
 .popular h1 {
   color: #171717;
   font-size: 3rem;
   font-weight: 600;
 }
+
 .popular hr {
   width: 300px;
   height: 6px;
   border-radius: 10px;
   background: #252525;
 }
+
 .popular-item {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Inicialmente quatro colunas */
   gap: 40px;
   align-items: center;
   justify-content: center;
-  margin-top: 75px;
+  margin-top: 50px;
 }
+
 .popular-item img {
   width: 100%;
   height: auto;
   max-width: 500px;
 }
+.item {
+  max-width: 350px;
+  width: 100%;
+}
 
-.popular-item h3 {
+.popular-item p {
+  font-family: Poppins;
+  font-size: 1rem;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 6px 0px;
+}
+
+.item-prices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+  gap: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.item-price-old {
+  color: #8c8c8c;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+}
+.product-prices {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px 0px;
+  gap: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.item-price-old {
+  color: #818181;
+  text-decoration: line-through;
+}
+.item-price-new {
+  color: #ff4141;
 }
