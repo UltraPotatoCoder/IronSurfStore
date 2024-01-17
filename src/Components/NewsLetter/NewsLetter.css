@@ -1,0 +1,93 @@
+.newsletter {
+  width: 65%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 0 5%; /* Padding relativo */
+  margin-bottom: 150px;
+  background: linear-gradient(180deg, #98d1ea, #e1ffea22 60%);
+  gap: 30px;
+}
+
+.newsletter h1 {
+  color: #454545;
+  font-size: 3.4375rem; /* Unidade relativa */
+  font-weight: 600;
+}
+
+.newsletter p {
+  color: #454545;
+  font-size: 1.25rem; /* Unidade relativa */
+}
+
+.newsletter div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 100%; /* Largura total */
+  max-width: 730px; /* Largura máxima */
+  height: 70px;
+  border-radius: 80px;
+  border: 1px solid #e3e3e3;
+}
+
+.newsletter input {
+  width: 100%; /* Largura total */
+  max-width: 500px; /* Largura máxima */
+  margin-left: 30px;
+  border: none;
+  outline: none;
+  color: #616161;
+  font-family: Poppins;
+  font-size: 1rem; /* Unidade relativa */
+}
+
+.newsletter div button {
+  width: 210px;
+  height: 70px;
+  border-radius: 80px;
+  background: black;
+  color: white;
+  font-size: 1rem; /* Unidade relativa */
+  cursor: pointer;
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+  .newsletter {
+    width: 85%; /* Ajuste de largura */
+  }
+
+  .newsletter h1 {
+    font-size: 2.5rem; /* Redução do tamanho da fonte */
+  }
+
+  .newsletter p {
+    font-size: 1rem; /* Redução do tamanho da fonte */
+  }
+
+  .newsletter input,
+  .newsletter div button {
+    font-size: 0.9rem; /* Redução do tamanho da fonte */
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter {
+    width: 100%; /* Largura total */
+    padding: 0 20px; /* Ajuste do padding */
+  }
+
+  .newsletter div {
+    flex-direction: column; /* Mudança para coluna */
+    gap: 10px; /* Espaçamento entre elementos */
+  }
+
+  .newsletter input {
+    margin-left: 0; /* Remoção da margem esquerda */
+  }
+}

@@ -1,10 +1,11 @@
 import './CSS/CartItems.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import remove_icon from '../assets/img/cart_cross_icon.png';
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app';
 
-function CartItems() {
+function CartItems({ addToCart }, { removeFromCart }) {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ function CartItems() {
           currentItems.map(it => (it.id === itemId ? updatedItem : it))
         );
       }
+      addToCart();
     } catch (error) {
       console.error('Error incrementing item quantity:', error);
     }
@@ -113,7 +115,10 @@ function CartItems() {
           <img
             className='cartitems-remove-icon'
             src={remove_icon}
-            onClick={() => handleRemoveItem(item.id)}
+            onClick={() => {
+              handleRemoveItem(item.id);
+              removeFromCart();
+            }}
             alt=''
           />
         </div>
@@ -144,5 +149,10 @@ function CartItems() {
     </div>
   );
 }
+
+CartItems.propTypes = {
+  addToCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
+};
 
 export default CartItems;

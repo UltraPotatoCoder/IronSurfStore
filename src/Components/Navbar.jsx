@@ -3,9 +3,11 @@ import logo from '/src/assets/img/logo.png';
 import cart_icon from '../assets/img/cart_icon.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function Navbar() {
+function Navbar({ cartCount }) {
   const [menu, setMenu] = useState('home');
+
   return (
     <div className='navbar'>
       <Link
@@ -75,10 +77,14 @@ function Navbar() {
         <Link to='/cart'>
           <img src={cart_icon} alt='cart_icon' />
         </Link>
-        <div className='nav-cart-count'>0</div>
+        <div className='nav-cart-count'>{cartCount}</div>
       </div>
     </div>
   );
 }
+
+Navbar.propTypes = {
+  cartCount: PropTypes.number.isRequired,
+};
 
 export default Navbar;

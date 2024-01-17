@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import star_icon from '../assets/img/star_icon.png';
 import star_dull_icon from '../assets/img/star_dull_icon.png';
@@ -7,7 +8,7 @@ import './CSS/ProductPage.css';
 
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app/products';
 
-function ProductPage() {
+function ProductPage({ addToCart }) {
   const { itemId } = useParams();
 
   const [oneItem, setOneItem] = useState(null);
@@ -41,6 +42,7 @@ function ProductPage() {
         new_price: productPrice, // Send this as new_price
         quantity: 1,
       });
+      addToCart();
     } catch (error) {
       console.error('Error adding product to cart:', error);
     }
@@ -92,5 +94,9 @@ function ProductPage() {
     </div>
   );
 }
+
+ProductPage.propTypes = {
+  addToCart: PropTypes.func.isRequired,
+};
 
 export default ProductPage;
