@@ -22,3 +22,30 @@
   margin-top: 50px;
   gap: 30px;
 }
+
+.collections p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+  .new-collections h1 {
+    font-size: 2.5rem; /* Reduzir o tamanho da fonte */
+  }
+}
+
+/* Ajustes adicionais para telas muito pequenas */
+@media (max-width: 480px) {
+  .new-collections h1 {
+    font-size: 2rem; /* Tamanho de fonte ainda menor para telas muito pequenas */
+  }
+}
+@media (max-width: 1200px) {
+  .collections {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* Grid responsivo para telas menores */
+  }
+}
