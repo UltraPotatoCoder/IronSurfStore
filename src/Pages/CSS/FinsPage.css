@@ -52,10 +52,11 @@
   width: 233px;
   height: 69px;
   border-radius: 75px;
-  background: #ededed;
-  color: #787878;
+  background: #ff4141;
+  color: white;
   font-size: 18px;
   font-weight: 500;
+  text-decoration: none;
 }
 .product-prices {
   display: flex;

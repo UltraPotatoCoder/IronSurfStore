@@ -22,6 +22,8 @@ function DecksPage() {
   useEffect(() => {
     getItem();
   }, []);
+  const youtubeVideoUrlDeck =
+    'https://www.youtube.com/watch?v=4El4JvZEH8k&ab_channel=VeiaSupplies';
 
   return (
     <div className='shop-category'>
@@ -58,7 +60,14 @@ function DecksPage() {
               </div>
             ))}
       </div>
-      <div className='shopcategory-loadmore'>Explore More</div>
+      <Link
+        to={youtubeVideoUrlDeck}
+        className='shopcategory-loadmore'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Check Video
+      </Link>
     </div>
   );
 }

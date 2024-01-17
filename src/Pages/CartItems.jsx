@@ -20,13 +20,37 @@ function CartItems() {
     getCartItems();
   }, []);
 
-  const getTotalCartAmount = () => {
-    let totalAmount = 0;
-    cartItems.forEach(item => {
-      totalAmount +=
-        (Number(item.new_price) || 0) * (Number(item.quantity) || 0);
-    });
-    return totalAmount.toFixed(2);
+  const handleIncrementQuantity = async itemId => {
+    try {
+      const item = cartItems.find(it => it.id === itemId);
+      if (item) {
+        const updatedItem = { ...item, quantity: item.quantity + 1 };
+
+        await axios.put(`${API_URL_ONE}/cart/${itemId}`, updatedItem);
+        setCartItems(currentItems =>
+          currentItems.map(it => (it.id === itemId ? updatedItem : it))
+        );
+      }
+    } catch (error) {
+      console.error('Error incrementing item quantity:', error);
+    }
+  };
+
+  const handleDecrementQuantity = async itemId => {
+    try {
+      const item = cartItems.find(it => it.id === itemId);
+      if (item && item.quantity > 1) {
+        // Prevent quantity from going below 1
+        const updatedItem = { ...item, quantity: item.quantity - 1 };
+
+        await axios.put(`${API_URL_ONE}/cart/${itemId}`, updatedItem);
+        setCartItems(currentItems =>
+          currentItems.map(it => (it.id === itemId ? updatedItem : it))
+        );
+      }
+    } catch (error) {
+      console.error('Error decrementing item quantity:', error);
+    }
   };
 
   const handleRemoveItem = async itemId => {
@@ -38,6 +62,15 @@ function CartItems() {
     } catch (error) {
       console.error('Error removing item:', error);
     }
+  };
+
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    cartItems.forEach(item => {
+      totalAmount +=
+        (Number(item.new_price) || 0) * (Number(item.quantity) || 0);
+    });
+    return totalAmount.toFixed(2);
   };
 
   return (
@@ -53,29 +86,36 @@ function CartItems() {
       <hr />
 
       {cartItems.map(item => (
-        <div key={item.id}>
-          <div className='cartitems-format cartitems-format-main'>
-            <img
-              src={item.productImage}
-              alt=''
-              className='carticon-product-icon'
-            />
-            <p>{item.productTitle}</p>
-            <p>€{Number(item.new_price).toFixed(2)}</p>
-            <button className='cartitems-quantity'>
-              {Number(item.quantity)}
+        <div key={item.id} className='cartitems-format cartitems-format-main'>
+          <img
+            src={item.productImage}
+            alt=''
+            className='carticon-product-icon'
+          />
+          <p>{item.productTitle}</p>
+          <p>€{Number(item.new_price).toFixed(2)}</p>
+          <div>
+            <button
+              className='decrement-button'
+              onClick={() => handleDecrementQuantity(item.id)}
+            >
+              -
             </button>
-            <p>
-              €{(Number(item.new_price) * Number(item.quantity)).toFixed(2)}
-            </p>
-            <img
-              className='cartitems-remove-icon'
-              src={remove_icon}
-              onClick={() => handleRemoveItem(item.id)}
-              alt=''
-            />
+            <span className='cartitems-quantity'>{item.quantity}</span>
+            <button
+              className='increment-button'
+              onClick={() => handleIncrementQuantity(item.id)}
+            >
+              +
+            </button>
           </div>
-          <hr />
+          <p>€{(Number(item.new_price) * Number(item.quantity)).toFixed(2)}</p>
+          <img
+            className='cartitems-remove-icon'
+            src={remove_icon}
+            onClick={() => handleRemoveItem(item.id)}
+            alt=''
+          />
         </div>
       ))}
 

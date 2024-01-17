@@ -23,6 +23,9 @@ function LeashesPage() {
     getItem();
   }, []);
 
+  const youtubeVideoUrlLeash =
+    'https://www.youtube.com/watch?v=JG5Ovn7mjeo&ab_channel=StokedForTravel';
+
   return (
     <div className='shop-category'>
       <div className='banner-container'>
@@ -58,7 +61,14 @@ function LeashesPage() {
               </div>
             ))}
       </div>
-      <div className='shopcategory-loadmore'>Explore More</div>
+      <Link
+        to={youtubeVideoUrlLeash}
+        className='shopcategory-loadmore'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Check Video
+      </Link>
     </div>
   );
 }

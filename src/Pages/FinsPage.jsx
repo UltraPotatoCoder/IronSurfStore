@@ -24,6 +24,9 @@ function FinsPage() {
     getItem();
   }, []);
 
+  const youtubeVideoUrl =
+    'https://www.youtube.com/watch?v=Z-nb1qxOjHU&ab_channel=FCSSurf';
+
   return (
     <div className='shop-category'>
       <div className='banner-container'>
@@ -59,7 +62,14 @@ function FinsPage() {
               </div>
             ))}
       </div>
-      <div className='shopcategory-loadmore'>Explore More</div>
+      <Link
+        to={youtubeVideoUrl}
+        className='shopcategory-loadmore'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Check Video
+      </Link>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import './Footer.css';
 import footer_logo from '../../assets/img/logo_big.png';
 import instagram_icon from '../../assets/img/instagram_icon.png';
-import pintester_icon from '../../assets/img/pintester_icon.png';
+import facebook_icon from '../../assets/img/facebook_icon.png';
 import whatsapp_icon from '../../assets/img/whatsapp_icon.png';
 
 function Footer() {
@@ -20,13 +20,31 @@ function Footer() {
       </ul>
       <div className='footer-social-icon'>
         <div className='footer-icons-container'>
-          <img src={instagram_icon} alt='' />
+          <a
+            href='https://www.instagram.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <img src={instagram_icon} alt='' />
+          </a>
         </div>
         <div className='footer-icons-container'>
-          <img src={pintester_icon} alt='' />
+          <a
+            href='https://www.facebook.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <img src={facebook_icon} alt='' />
+          </a>
         </div>
         <div className='footer-icons-container'>
-          <img src={whatsapp_icon} alt='' />
+          <a
+            href='https://www.whatsapp.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <img src={whatsapp_icon} alt='' />
+          </a>
         </div>
       </div>
       <div className='footer-copyright'>
