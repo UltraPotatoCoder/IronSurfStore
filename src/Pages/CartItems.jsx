@@ -42,7 +42,6 @@ function CartItems({ addToCart, removeFromCart }) {
     try {
       const item = cartItems.find(it => it.id === itemId);
       if (item && item.quantity > 1) {
-        // Prevent quantity from going below 1
         const updatedItem = { ...item, quantity: item.quantity - 1 };
 
         await axios.put(`${API_URL_ONE}/cart/${itemId}`, updatedItem);

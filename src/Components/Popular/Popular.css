@@ -1,4 +1,3 @@
-/* Estilos gerais */
 .popular {
   display: flex;
   flex-direction: column;
@@ -22,7 +21,7 @@
 
 .popular-item {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Inicialmente quatro colunas */
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   align-items: center;
   justify-content: center;
@@ -98,6 +97,9 @@
   .item-price-old {
     font-size: 14px;
   }
+  .item-price-new {
+    font-size: 14px;
+  }
   .popular {
     height: 70vh;
   }
@@ -124,6 +126,9 @@
   .item-price-old {
     font-size: 13px;
   }
+  .item-price-new {
+    font-size: 13px;
+  }
   .popular {
     height: 60vh;
   }
@@ -148,6 +153,9 @@
     width: 120px;
   }
   .item-price-old {
+    font-size: 12px;
+  }
+  .item-price-new {
     font-size: 12px;
   }
   .popular {

@@ -8,10 +8,10 @@ import PropTypes from 'prop-types';
 
 function Navbar({ cartCount }) {
   const [menu, setMenu] = useState('home');
-  const menuRef = useRef(); // Corrected: useRef() instead of useRef
+  const menuRef = useRef();
 
   const dropdown_toggle = e => {
-    menuRef.current.classList.toggle('nav-menu-visible'); // Corrected: menuRef.current.classList
+    menuRef.current.classList.toggle('nav-menu-visible');
     e.target.classList.toggle('open');
   };
 

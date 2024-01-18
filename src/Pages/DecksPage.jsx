@@ -12,7 +12,7 @@ function DecksPage() {
     try {
       const response = await axios.get(`${API_URL}`);
       console.log(response);
-      // Assuming the data is an array and directly available under response.data
+
       setItems(response.data);
     } catch (error) {
       console.log(error);

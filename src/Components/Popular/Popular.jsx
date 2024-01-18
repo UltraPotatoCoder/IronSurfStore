@@ -23,10 +23,10 @@ function Popular() {
   }, []);
 
   return (
-    <div className='popular'>
+    <div className='new-collections'>
       <h1>THE MOST POPULAR ACCESSORIES</h1>
       <hr />
-      <div className='popular-item'>
+      <div className='collections'>
         {items &&
           items.slice(0, 4).map(item => {
             return (

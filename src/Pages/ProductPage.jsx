@@ -33,13 +33,13 @@ function ProductPage({ addToCart }) {
       const productId = oneItem.id;
       const productImage = oneItem.image;
       const productTitle = oneItem.name;
-      const productPrice = oneItem.new_price; // Ensure this is the correct price
+      const productPrice = oneItem.new_price;
 
       await axios.post(addToCartUrl, {
         productId,
         productImage,
         productTitle,
-        new_price: productPrice, // Send this as new_price
+        new_price: productPrice,
         quantity: 1,
       });
       addToCart();

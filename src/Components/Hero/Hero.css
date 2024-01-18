@@ -127,28 +127,28 @@
     font-size: 13px;
   }
   .hero-right img {
-    width: 130px;
+    width: 150px;
   }
 }
 @media (max-width: 500px) {
-  .hero {
-    flex-direction: column;
-  }
-  .hero-right {
-    display: none;
+  .hero-left {
+    padding-left: 30px;
   }
   .hero-left h2 {
-    font-size: 18px;
+    font-size: 14px;
   }
   .hero-left p {
-    font-size: 50px;
+    font-size: 30px;
   }
   .hero-hand-icon img {
-    width: 55px;
+    width: 30px;
   }
   .hero-latest-btn {
-    width: 200px;
-    height: 45px;
-    font-size: 14px;
+    width: 175px;
+    height: 40px;
+    font-size: 13px;
+  }
+  .hero-right img {
+    width: 130px;
   }
 }
