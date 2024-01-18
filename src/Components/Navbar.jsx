@@ -1,12 +1,19 @@
 import './Navbar.css';
 import logo from '/src/assets/img/logo.png';
+import nav_dropdown from '../assets/img/dropdown_icon.png';
 import cart_icon from '../assets/img/cart_icon.png';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Navbar({ cartCount }) {
   const [menu, setMenu] = useState('home');
+  const menuRef = useRef(); // Corrected: useRef() instead of useRef
+
+  const dropdown_toggle = e => {
+    menuRef.current.classList.toggle('nav-menu-visible'); // Corrected: menuRef.current.classList
+    e.target.classList.toggle('open');
+  };
 
   return (
     <div className='navbar'>
@@ -25,7 +32,8 @@ function Navbar({ cartCount }) {
           <p>IRON SURF STORE</p>
         </div>
       </Link>
-      <ul className='nav-menu'>
+      <img onClick={dropdown_toggle} src={nav_dropdown} alt='' />
+      <ul ref={menuRef} className='nav-menu'>
         <li
           onClick={() => {
             setMenu('home');
