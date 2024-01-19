@@ -69,12 +69,120 @@
 }
 .decrement-button,
 .increment-button {
-  padding: 5px 10px; /* Adjust size as needed */
-  margin: 0 5px; /* Spacing between buttons */
-  background-color: #ff5a5a; /* Choose a color that fits your design */
-  color: white; /* Text color */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Cursor changes to pointer on hover */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #ff5a5a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+@media (max-width: 1280px) {
+  .cartitems {
+    margin: 60px 50px;
+  }
+  .cartitems-format-main {
+    grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    gap: 20px;
+    padding: 15px 0px;
+    font-size: 15px;
+  }
+  .carticon-product-icon {
+    height: 50px;
+  }
+  .cartitems-remove-icon {
+    margin: auto;
+  }
+  .cartitems-quantity {
+    width: 40px;
+    height: 30px;
+    font-size: 13px;
+  }
+  .cartitems-down {
+    margin: 80px 0px;
+    flex-direction: column;
+    gap: 80px;
+  }
+  .cartitems-total {
+    margin: 0;
+  }
+  .cartitems-total button {
+    max-width: 200px;
+    height: 45px;
+    font-size: 13px;
+  }
+  .decrement-button,
+  .increment-button {
+    font-size: 10px;
+    padding: 2px 6px;
+    margin: 10px;
+    background-color: #ff5a5a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+}
+@media (max-width: 800px) {
+  .cartitems {
+    margin: 50px 40px;
+  }
+  .cartitems-format-main {
+    grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    gap: 20px;
+    padding: 15px 0px;
+    font-size: 15px;
+  }
+  .carticon-product-icon {
+    height: 50px;
+  }
+  .cartitems-remove-icon {
+    margin: auto;
+  }
+  .cartitems-quantity {
+    width: 40px;
+    height: 30px;
+    font-size: 13px;
+  }
+  .cartitems-down {
+    margin: 80px 0px;
+    flex-direction: column;
+    gap: 80px;
+  }
+  .cartitems-total {
+    margin: 0;
+  }
+  .cartitems-total button {
+    max-width: 200px;
+    height: 45px;
+    font-size: 13px;
+  }
+  .decrement-button,
+  .increment-button {
+    font-size: 10px;
+    padding: 2px 6px;
+    margin: 10px;
+    background-color: #ff5a5a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+}
+@media (max-width: 500px) {
+  .cartitems-format-main {
+    display: none;
+    grid-template-columns: 0.5fr 3fr 0.5fr;
+    gap: 10px;
+  }
+  .cartitems-format {
+    display: grid;
+  }
+  .decrement-button,
+  .increment-button {
+    display: none;
+  }
 }

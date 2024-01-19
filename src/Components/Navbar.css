@@ -160,11 +160,11 @@
 }
 @media (max-width: 500px) {
   .navbar {
-    padding: 8px 0px;
+    padding: 7px 0px;
     gap: 0;
   }
   .nav-logo {
-    transform: scale(0.6);
+    transform: scale(0.7);
   }
   .nav-menu {
     height: 70px;
@@ -175,6 +175,6 @@
   }
   .img-icon {
     width: 20px;
-    padding-right: 50px;
+    padding-right: 40px;
   }
 }
