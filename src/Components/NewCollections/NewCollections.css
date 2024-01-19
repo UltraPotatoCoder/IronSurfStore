@@ -29,6 +29,9 @@
   justify-content: center;
 }
 .itemImages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 280px;
 }
 
@@ -107,6 +110,12 @@
 @media (max-width: 500px) {
   .item {
     width: 160px;
+  }
+  .collections p {
+    font-size: 14px;
+  }
+  .new-collections h1 {
+    font-size: 18px;
   }
   .itemImages {
     width: 160px;

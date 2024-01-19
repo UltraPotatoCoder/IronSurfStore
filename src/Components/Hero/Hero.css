@@ -134,6 +134,9 @@
   .hero-left {
     padding-left: 30px;
   }
+  .hero {
+    height: 60vh;
+  }
   .hero-left h2 {
     font-size: 14px;
   }
