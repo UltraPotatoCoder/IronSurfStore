@@ -182,15 +182,15 @@
   }
 
   .cartitems-quantity {
-    width: 12px;
+    width: 11px;
     font-size: 13px;
-    height: 14px;
+    height: 1.009em;
   }
 
   .decrement-button,
   .increment-button {
     font-size: 10px;
-    margin: 0px;
+    margin: 2px;
     height: 21px;
     width: 25px;
   }
