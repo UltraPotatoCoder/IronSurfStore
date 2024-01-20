@@ -21,7 +21,7 @@ function Navbar({ cartCount }) {
         style={{
           textDecoration: 'none',
           color: 'black',
-          fontSize: '25px',
+          fontSize: '15px',
           fontFamily: 'Poppins, sans-serif',
           fontWeight: '550',
         }}

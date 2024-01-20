@@ -10,6 +10,7 @@ import CartItems from './Pages/CartItems';
 import FinsPage from './Pages/FinsPage';
 import DecksPage from './Pages/DecksPage';
 import LeashesPage from './Pages/LeashesPage';
+import Weather from './Pages/Weather';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -32,6 +33,8 @@ function App() {
         <Route path='/fins' element={<FinsPage />} />
         <Route path='/decks' element={<DecksPage />} />
         <Route path='/leashes' element={<LeashesPage />} />
+        <Route path='/weather' element={<Weather />} />
+
         <Route
           path='/products/:itemId'
           element={<ProductPage addToCart={addToCart} />}
