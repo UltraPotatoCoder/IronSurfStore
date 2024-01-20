@@ -82,6 +82,19 @@ function Navbar({ cartCount }) {
           </Link>{' '}
           {menu === 'leashes' ? <hr /> : <></>}
         </li>
+        <li
+          onClick={() => {
+            setMenu('weather');
+          }}
+        >
+          <Link
+            style={{ textDecoration: 'none', color: 'black' }}
+            to='/weather'
+          >
+            Weather
+          </Link>{' '}
+          {menu === 'weather' ? <hr /> : <></>}
+        </li>
       </ul>
       <div className='nav-login-cart'>
         <Link to='/login'>
