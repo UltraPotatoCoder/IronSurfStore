@@ -32,6 +32,9 @@
   cursor: pointer;
 }
 .cartitems-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 3px 6px;
   width: 64px;
   height: 50px;
@@ -193,5 +196,9 @@
     margin: 2px;
     height: 21px;
     width: 25px;
+  }
+
+  .cartitems hr {
+    display: none;
   }
 }
