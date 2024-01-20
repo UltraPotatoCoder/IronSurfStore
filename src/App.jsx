@@ -25,7 +25,7 @@ function App() {
     }
   };
 
-  const removeAllItems = quantity => {
+  const removeAllItemsCross = quantity => {
     setCartCount(cartCount - quantity);
   };
 
@@ -49,7 +49,7 @@ function App() {
             <CartItems
               addToCart={addToCart}
               removeFromCart={removeFromCart}
-              removeAllItems={removeAllItems}
+              removeAllItemsCross={removeAllItemsCross}
             />
           }
         />

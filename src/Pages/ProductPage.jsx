@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import star_icon from '../assets/img/star_icon.png';
 import star_dull_icon from '../assets/img/star_dull_icon.png';
@@ -8,7 +7,7 @@ import './CSS/ProductPage.css';
 
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app/products';
 
-function ProductPage({ addToCart }) {
+function ProductPage({ addToCart, handleIncrementQuantity }) {
   const { itemId } = useParams();
 
   const [oneItem, setOneItem] = useState(null);
@@ -28,23 +27,38 @@ function ProductPage({ addToCart }) {
 
   const handleAddToCart = async () => {
     try {
-      const addToCartUrl = 'https://iron-surf-store.adaptable.app/cart';
+      const cartResponse = await axios.get(
+        'https://iron-surf-store.adaptable.app/cart'
+      );
+      const itemInCart = cartResponse.data.find(
+        item => item.productId === oneItem.id
+      );
 
-      const productId = oneItem.id;
-      const productImage = oneItem.image;
-      const productTitle = oneItem.name;
-      const productPrice = oneItem.new_price;
+      if (itemInCart) {
+        handleIncrementQuantity();
+      } else {
+        try {
+          const addToCartUrl = 'https://iron-surf-store.adaptable.app/cart';
 
-      await axios.post(addToCartUrl, {
-        productId,
-        productImage,
-        productTitle,
-        new_price: productPrice,
-        quantity: 1,
-      });
-      addToCart();
+          const productId = oneItem.id;
+          const productImage = oneItem.image;
+          const productTitle = oneItem.name;
+          const productPrice = oneItem.new_price;
+
+          await axios.post(addToCartUrl, {
+            productId,
+            productImage,
+            productTitle,
+            new_price: productPrice,
+            quantity: 1,
+          });
+          addToCart();
+        } catch (error) {
+          console.error('Error adding product to cart:', error);
+        }
+      }
     } catch (error) {
-      console.error('Error adding product to cart:', error);
+      console.error('Error checking/adding product to cart:', error);
     }
   };
 
@@ -87,16 +101,18 @@ function ProductPage({ addToCart }) {
               <h3>Feautures</h3>
               {oneItem.description}
             </div>
-            <button onClick={handleAddToCart}>ADD TO CART</button>
+            <button
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
+              ADD TO CART
+            </button>
           </div>
         </div>
       )}
     </div>
   );
 }
-
-ProductPage.propTypes = {
-  addToCart: PropTypes.func.isRequired,
-};
 
 export default ProductPage;

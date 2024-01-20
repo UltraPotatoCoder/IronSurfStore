@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import remove_icon from '../assets/img/cart_cross_icon.png';
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app';
 
-function CartItems({ addToCart, removeFromCart, removeAllItems }) {
+function CartItems({ addToCart, removeFromCart, removeAllItemsCross }) {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -106,7 +106,9 @@ function CartItems({ addToCart, removeFromCart, removeAllItems }) {
             <span className='cartitems-quantity'>{item.quantity}</span>
             <button
               className='increment-button'
-              onClick={() => handleIncrementQuantity(item.id)}
+              onClick={() => {
+                handleIncrementQuantity(item.id);
+              }}
             >
               +
             </button>
@@ -117,7 +119,7 @@ function CartItems({ addToCart, removeFromCart, removeAllItems }) {
             src={remove_icon}
             onClick={() => {
               handleRemoveItem(item.id);
-              removeAllItems(item.quantity);
+              removeAllItemsCross(item.quantity);
             }}
             alt=''
           />
@@ -149,10 +151,5 @@ function CartItems({ addToCart, removeFromCart, removeAllItems }) {
     </div>
   );
 }
-
-CartItems.propTypes = {
-  addToCart: PropTypes.func.isRequired,
-  removeFromCart: PropTypes.func.isRequired,
-};
 
 export default CartItems;
