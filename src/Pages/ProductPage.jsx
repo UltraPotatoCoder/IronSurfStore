@@ -76,6 +76,7 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
                 className='productdisplay-main-img'
                 src={oneItem.image}
                 alt='oneItem image'
+                onClick={window.scrollTo(0, 0)}
               />
             </div>
           </div>
@@ -104,6 +105,7 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
             <button
               onClick={() => {
                 handleAddToCart();
+                window.scrollTo(0, 0);
               }}
             >
               ADD TO CART
