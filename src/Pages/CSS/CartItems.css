@@ -35,8 +35,7 @@
   padding: 3px 6px;
   width: 64px;
   height: 50px;
-  border: 2px solid #ebebeb;
-  border-radius: 15px;
+  border: 1px solid #ebebeb;
   background: #fff;
 }
 .cartitems-down {
@@ -69,12 +68,10 @@
 }
 .decrement-button,
 .increment-button {
-  padding: 5px 10px;
   margin: 0 5px;
   background-color: #ff5a5a;
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -115,12 +112,10 @@
   .decrement-button,
   .increment-button {
     font-size: 10px;
-    padding: 2px 6px;
     margin: 10px;
     background-color: #ff5a5a;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
@@ -162,12 +157,10 @@
   .decrement-button,
   .increment-button {
     font-size: 10px;
-    padding: 2px 6px;
     margin: 10px;
     background-color: #ff5a5a;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
@@ -181,8 +174,24 @@
   .cartitems-format {
     display: grid;
   }
+
+  .buttonBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cartitems-quantity {
+    width: 12px;
+    font-size: 13px;
+    height: 14px;
+  }
+
   .decrement-button,
   .increment-button {
-    display: none;
+    font-size: 10px;
+    margin: 0px;
+    height: 21px;
+    width: 25px;
   }
 }

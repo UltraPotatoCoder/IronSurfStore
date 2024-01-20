@@ -97,7 +97,7 @@ function CartItems({ addToCart, removeFromCart }) {
           />
           <p>{item.productTitle}</p>
           <p>€{Number(item.new_price).toFixed(2)}</p>
-          <div>
+          <div className='buttonBox'>
             <button
               className='decrement-button'
               onClick={() => handleDecrementQuantity(item.id)}
