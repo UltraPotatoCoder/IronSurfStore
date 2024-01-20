@@ -1,9 +1,8 @@
 .container {
-  width: 607px;
-  height: 829px;
+  width: auto;
+  height: auto;
   margin: auto;
-  margin-top: 50px;
-  border-radius: 12px;
+  border-radius: 0px;
   background-image: linear-gradient(180deg, #130754 0%, #3b2f80 100%);
 }
 .top-bar {
@@ -14,8 +13,8 @@
 }
 .top-bar input {
   display: flex;
-  width: 362px;
-  height: 78px;
+  width: 300px;
+  height: 50px;
   background: #ebfffc;
   border: none;
   outline: none;
@@ -29,8 +28,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 78px;
-  height: 78px;
+  width: 50px;
+  height: 50px;
   background: #ebfffc;
   border-radius: 40px;
   cursor: pointer;
@@ -40,11 +39,14 @@
   display: flex;
   justify-content: center;
 }
+.weather-image img {
+  width: 100px;
+}
 .weather-temp {
   display: flex;
   justify-content: center;
   color: white;
-  font-size: 120px;
+  font-size: 80px;
   font-weight: 400;
 }
 .weather-location {
@@ -53,17 +55,20 @@
   color: white;
   font-size: 60px;
   font-weight: 400;
+  margin-top: 50px;
 }
 .data-container {
   margin-top: 50px;
   color: white;
   display: flex;
   justify-content: center;
+  gap: 70px;
+  padding-bottom: 50px;
 }
 .element {
-  margin: auto;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-around;
   gap: 12px;
 }
 .data {

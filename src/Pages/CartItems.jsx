@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import remove_icon from '../assets/img/cart_cross_icon.png';
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app';
 
-function CartItems({ addToCart, removeFromCart }) {
+function CartItems({ addToCart, removeFromCart, removeAllItems }) {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -61,7 +61,6 @@ function CartItems({ addToCart, removeFromCart }) {
       setCartItems(prevCartItems =>
         prevCartItems.filter(item => item.id !== itemId)
       );
-      removeFromCart();
     } catch (error) {
       console.error('Error removing item:', error);
     }
@@ -118,7 +117,7 @@ function CartItems({ addToCart, removeFromCart }) {
             src={remove_icon}
             onClick={() => {
               handleRemoveItem(item.id);
-              removeFromCart();
+              removeAllItems(item.quantity);
             }}
             alt=''
           />

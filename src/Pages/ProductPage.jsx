@@ -54,8 +54,8 @@ function ProductPage({ addToCart }) {
         <div className='productdisplay'>
           <div className='productdisplay-left'>
             <div className='productdisplay-img-list'>
-              <img src={oneItem.image} />
-              <img src={oneItem.image} alt='' />
+              <img src={oneItem.image_detail_1} />
+              <img src={oneItem.image_detail_2} alt='' />
             </div>
             <div className='productdisplay-img'>
               <img

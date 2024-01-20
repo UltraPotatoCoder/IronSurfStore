@@ -25,6 +25,10 @@ function App() {
     }
   };
 
+  const removeAllItems = quantity => {
+    setCartCount(cartCount - quantity);
+  };
+
   return (
     <div className='App'>
       <Navbar cartCount={cartCount} />
@@ -42,7 +46,11 @@ function App() {
         <Route
           path='/cart'
           element={
-            <CartItems addToCart={addToCart} removeFromCart={removeFromCart} />
+            <CartItems
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+              removeAllItems={removeAllItems}
+            />
           }
         />
         <Route path='/login' element={<Login />} />
