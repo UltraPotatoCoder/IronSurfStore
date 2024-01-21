@@ -207,7 +207,13 @@
   }
 }
 @media (max-width: 500px) {
+  .product-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .productdisplay {
+    display: flex;
     flex-direction: column;
   }
   .productdisplay-left {
@@ -223,7 +229,7 @@
     height: 75px;
   }
   .productdisplay-main-img {
-    height: 330px;
+    height: 300px;
   }
   .productdisplay-right {
     margin: 5px;
@@ -237,7 +243,7 @@
     width: 15px;
   }
   .productdisplay-right button {
-    margin-left: 170px;
+    margin-left: 150px;
     width: 130px;
     font-size: 15px;
     padding: 12px 0px;
