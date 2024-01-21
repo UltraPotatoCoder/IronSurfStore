@@ -95,7 +95,7 @@ function Navbar({ cartCount }) {
         <Link style={{ textDecoration: 'none', color: 'black' }} to='/weather'>
           <img
             style={{
-              width: '50px',
+              width: '40px',
               display: 'flex',
               alignItems: 'center',
             }}
