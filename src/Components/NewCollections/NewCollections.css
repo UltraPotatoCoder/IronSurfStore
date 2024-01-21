@@ -111,6 +111,12 @@
   .item {
     width: 160px;
   }
+  .item-prices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+  }
   .collections p {
     font-size: 14px;
   }
@@ -118,12 +124,13 @@
     font-size: 18px;
   }
   .itemImages {
-    width: 160px;
+    width: 85%;
   }
 
   .collections {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 85%;
     gap: 20px;
   }
 }

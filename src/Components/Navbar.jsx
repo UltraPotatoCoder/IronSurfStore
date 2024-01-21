@@ -5,6 +5,7 @@ import cart_icon from '../assets/img/cart_icon.png';
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import cloud_img from '../assets/img/cloudy.png';
 
 function Navbar({ cartCount }) {
   const [menu, setMenu] = useState('home');
@@ -87,16 +88,21 @@ function Navbar({ cartCount }) {
             setMenu('weather');
           }}
         >
-          <Link
-            style={{ textDecoration: 'none', color: 'black' }}
-            to='/weather'
-          >
-            Weather
-          </Link>{' '}
           {menu === 'weather' ? <hr /> : <></>}
         </li>
       </ul>
       <div className='nav-login-cart'>
+        <Link style={{ textDecoration: 'none', color: 'black' }} to='/weather'>
+          <img
+            style={{
+              width: '50px',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+            src={cloud_img}
+            alt=''
+          />
+        </Link>{' '}
         <Link to='/login'>
           <button>Login</button>
         </Link>
