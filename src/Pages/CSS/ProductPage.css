@@ -217,22 +217,23 @@
     flex-direction: column;
   }
   .productdisplay-left {
-    gap: 10px;
+    gap: px;
     flex-direction: row;
     margin: auto;
   }
   .productdisplay-img-list {
     flex-direction: column;
-    gap: 8px;
+    gap: 20px;
   }
   .productdisplay-img-list img {
     height: 75px;
   }
   .productdisplay-main-img {
-    height: 300px;
+    height: 280px;
   }
   .productdisplay-right {
-    margin: 5px;
+    margin: 30px;
+    margin-top: 5px;
   }
   .productdisplay-right h1 {
     margin-top: 15px;
@@ -241,11 +242,5 @@
   }
   .productdisplay-right-stars img {
     width: 15px;
-  }
-  .productdisplay-right button {
-    margin-left: 150px;
-    width: 130px;
-    font-size: 15px;
-    padding: 12px 0px;
   }
 }
