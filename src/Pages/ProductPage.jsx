@@ -11,6 +11,8 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
   const { itemId } = useParams();
 
   const [oneItem, setOneItem] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); // New state for the modal
+  const [modalImage, setModalImage] = useState(''); // State to store the image URL
 
   useEffect(() => {
     const getOneItem = async () => {
@@ -62,21 +64,34 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
     }
   };
 
+  const toggleModal = image => {
+    setModalImage(image); // Set the image to be displayed in the modal
+    setIsModalOpen(!isModalOpen); // Toggle the modal state
+  };
+
   return (
     <div className='product-page-container'>
       {oneItem && (
         <div className='productdisplay'>
           <div className='productdisplay-left'>
             <div className='productdisplay-img-list'>
-              <img src={oneItem.image_detail_1} />
-              <img src={oneItem.image_detail_2} alt='' />
+              <img
+                src={oneItem.image_detail_1}
+                alt=''
+                onClick={() => toggleModal(oneItem.image_detail_1)} // Open modal with image_detail_1
+              />
+              <img
+                src={oneItem.image_detail_2}
+                alt=''
+                onClick={() => toggleModal(oneItem.image_detail_2)} // Open modal with image_detail_2
+              />
             </div>
             <div className='productdisplay-img'>
               <img
                 className='productdisplay-main-img'
                 src={oneItem.image}
                 alt='oneItem image'
-                onClick={window.scrollTo(0, 0)}
+                onClick={() => toggleModal(oneItem.image)} // Open modal with main image
               />
             </div>
           </div>
@@ -99,7 +114,7 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
               </div>
             </div>
             <div className='productdisplay-right-description'>
-              <h3>Feautures</h3>
+              <h3>Features</h3>
               {oneItem.description}
             </div>
             <button
@@ -110,6 +125,20 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
             >
               ADD TO CART
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className='modal-overlay'>
+          <div className='modal-content'>
+            <img
+              src={modalImage}
+              alt='Modal Image'
+              className='modal-image'
+              onClick={() => setIsModalOpen(false)} // Close the modal when clicking the image
+            />
           </div>
         </div>
       )}
