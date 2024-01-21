@@ -180,11 +180,11 @@
     gap: 0;
   }
   .nav-logo {
-    transform: scale(0.7);
+    transform: scale(0.6);
   }
 
   .nav-logo p {
-    font-size: 18px;
+    font-size: 17px;
   }
   .nav-menu {
     height: 70px;
@@ -192,6 +192,7 @@
   }
   .nav-login-cart {
     transform: scale(0.7);
+    gap: 15px;
   }
   .img-icon {
     width: 30px;
