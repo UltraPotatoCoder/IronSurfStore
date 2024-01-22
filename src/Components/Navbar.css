@@ -178,7 +178,7 @@
   .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
   }
   .navbar {
     padding: 7px 0px;
