@@ -56,7 +56,7 @@ function Login() {
               name=''
               value={password}
               onChange={e => setPassword(e.target.value)}
-              type='password' // Use type='password' for password input
+              type='password'
               placeholder='Password'
             />
             <button type='submit'>Login</button>{' '}
