@@ -11,6 +11,7 @@ import FinsPage from './Pages/FinsPage';
 import DecksPage from './Pages/DecksPage';
 import LeashesPage from './Pages/LeashesPage';
 import Weather from './Pages/Weather';
+import Register from './Components/Register/Register';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -54,6 +55,7 @@ function App() {
           }
         />
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
       <Footer />
     </div>
