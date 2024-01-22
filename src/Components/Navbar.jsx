@@ -17,99 +17,107 @@ function Navbar({ cartCount }) {
   };
 
   return (
-    <div className='navbar'>
-      <img
-        className='img-icon'
-        onClick={dropdown_toggle}
-        src={nav_dropdown}
-        alt=''
-      />
-      <Link
-        style={{
-          textDecoration: 'none',
-          color: 'black',
-          fontSize: '15px',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: '550',
-        }}
-        to='/'
-      >
-        <div className='nav-logo'>
-          <img src={logo} alt='logo' />
-          <p>IRON SURF STORE</p>
-        </div>
-      </Link>
-      <ul ref={menuRef} className='nav-menu'>
-        <li
-          onClick={() => {
-            setMenu('home');
+    <div className='nav-container'>
+      <div className='navbar'>
+        <img
+          className='img-icon'
+          onClick={dropdown_toggle}
+          src={nav_dropdown}
+          alt=''
+        />
+        <Link
+          style={{
+            textDecoration: 'none',
+            color: 'black',
+            fontSize: '15px',
+            fontFamily: 'Poppins, sans-serif',
+            fontWeight: '550',
           }}
+          to='/'
         >
-          <Link style={{ textDecoration: 'none', color: 'black' }} to='/'>
-            Home
-          </Link>{' '}
-          {menu === 'home' ? <hr /> : <></>}
-        </li>
-        <li
-          onClick={() => {
-            setMenu('fins');
-          }}
-        >
-          <Link style={{ textDecoration: 'none', color: 'black' }} to='/fins'>
-            Fins
-          </Link>{' '}
-          {menu === 'fins' ? <hr /> : <></>}
-        </li>
-        <li
-          onClick={() => {
-            setMenu('decks');
-          }}
-        >
-          <Link style={{ textDecoration: 'none', color: 'black' }} to='/decks'>
-            Decks
-          </Link>{' '}
-          {menu === 'decks' ? <hr /> : <></>}
-        </li>
-        <li
-          onClick={() => {
-            setMenu('leashes');
-          }}
-        >
+          <div className='nav-logo'>
+            <img src={logo} alt='logo' />
+            <p>IRON SURF STORE</p>
+          </div>
+        </Link>
+        <ul ref={menuRef} className='nav-menu'>
+          <li
+            onClick={() => {
+              setMenu('home');
+            }}
+          >
+            <Link style={{ textDecoration: 'none', color: 'black' }} to='/'>
+              Home
+            </Link>{' '}
+            {menu === 'home' ? <hr /> : <></>}
+          </li>
+          <li
+            onClick={() => {
+              setMenu('fins');
+            }}
+          >
+            <Link style={{ textDecoration: 'none', color: 'black' }} to='/fins'>
+              Fins
+            </Link>{' '}
+            {menu === 'fins' ? <hr /> : <></>}
+          </li>
+          <li
+            onClick={() => {
+              setMenu('decks');
+            }}
+          >
+            <Link
+              style={{ textDecoration: 'none', color: 'black' }}
+              to='/decks'
+            >
+              Decks
+            </Link>{' '}
+            {menu === 'decks' ? <hr /> : <></>}
+          </li>
+          <li
+            onClick={() => {
+              setMenu('leashes');
+            }}
+          >
+            <Link
+              style={{ textDecoration: 'none', color: 'black' }}
+              to='/leashes'
+            >
+              Leashes
+            </Link>{' '}
+            {menu === 'leashes' ? <hr /> : <></>}
+          </li>
+          <li
+            onClick={() => {
+              setMenu('weather');
+            }}
+          >
+            {menu === 'weather' ? <hr /> : <></>}
+          </li>
+        </ul>
+        <div className='nav-login-cart'>
           <Link
             style={{ textDecoration: 'none', color: 'black' }}
-            to='/leashes'
+            to='/weather'
           >
-            Leashes
+            <img
+              style={{
+                width: '40px',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+              src={cloud_img}
+              alt=''
+            />
           </Link>{' '}
-          {menu === 'leashes' ? <hr /> : <></>}
-        </li>
-        <li
-          onClick={() => {
-            setMenu('weather');
-          }}
-        >
-          {menu === 'weather' ? <hr /> : <></>}
-        </li>
-      </ul>
-      <div className='nav-login-cart'>
-        <Link style={{ textDecoration: 'none', color: 'black' }} to='/weather'>
-          <img
-            style={{
-              width: '40px',
-              display: 'flex',
-              alignItems: 'center',
-            }}
-            src={cloud_img}
-            alt=''
-          />
-        </Link>{' '}
-        <Link to='/login'>
-          <button>Login</button>
-        </Link>
-        <Link to='/cart'>
-          <img src={cart_icon} alt='cart_icon' />
-        </Link>
-        <div className='nav-cart-count'>{cartCount}</div>
+          <Link to='/login'>
+            <button>Login</button>
+          </Link>
+          <Link to='/cart'>
+            <img src={cart_icon} alt='cart_icon' />
+          </Link>
+          <div className='nav-cart-count'>{cartCount}</div>
+        </div>
       </div>
     </div>
   );

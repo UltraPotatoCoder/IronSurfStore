@@ -175,9 +175,13 @@
   }
 }
 @media (max-width: 500px) {
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
   .navbar {
     padding: 7px 0px;
-    gap: 0;
   }
   .nav-logo {
     transform: scale(0.6);
