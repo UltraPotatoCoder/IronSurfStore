@@ -110,8 +110,8 @@ function Navbar({ cartCount }) {
               alt=''
             />
           </Link>{' '}
-          <Link to='/login'>
-            <button>Login</button>
+          <Link to='/register'>
+            <button>Register</button>
           </Link>
           <Link to='/cart'>
             <img src={cart_icon} alt='cart_icon' />

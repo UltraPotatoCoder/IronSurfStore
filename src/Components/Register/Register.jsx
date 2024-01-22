@@ -1,10 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../../Pages/CSS/Login.css';
 const API_URL_USER = 'https://iron-surf-store.adaptable.app/users';
 
 function Register() {
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,7 +12,6 @@ function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(API_URL_USER, {
-        name,
         email,
         password,
       });
@@ -29,13 +28,7 @@ function Register() {
 
         <div className='loginsignup-fields'>
           <form onSubmit={handleSubmit}>
-            <input
-              name=''
-              value={name}
-              onChange={e => setName(e.target.value)}
-              type='text'
-              placeholder='Name'
-            />
+            <input type='text' placeholder='Name' />
             <input
               name=''
               value={email}
@@ -50,12 +43,17 @@ function Register() {
               type='text'
               placeholder='Password'
             />
-            <button type='submit'>Register</button>{' '}
+            <Link to='/login'>
+              <button type='submit'>Register</button>{' '}
+            </Link>
           </form>
         </div>
 
         <p className='loginsignup-login'>
-          Already have an account? <span>Login here</span>
+          Already have an account?{' '}
+          <Link to='/login'>
+            <span>Login here</span>
+          </Link>
         </p>
         <div className='loginsignup-agree'>
           <input type='checkbox' name='' id='' />
