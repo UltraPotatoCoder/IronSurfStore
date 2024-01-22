@@ -18,6 +18,12 @@ function Navbar({ cartCount }) {
 
   return (
     <div className='navbar'>
+      <img
+        className='img-icon'
+        onClick={dropdown_toggle}
+        src={nav_dropdown}
+        alt=''
+      />
       <Link
         style={{
           textDecoration: 'none',
@@ -33,12 +39,6 @@ function Navbar({ cartCount }) {
           <p>IRON SURF STORE</p>
         </div>
       </Link>
-      <img
-        className='img-icon'
-        onClick={dropdown_toggle}
-        src={nav_dropdown}
-        alt=''
-      />
       <ul ref={menuRef} className='nav-menu'>
         <li
           onClick={() => {
