@@ -82,7 +82,7 @@
   margin-top: -35px;
   margin-left: -55px;
   border-radius: 11px;
-  font-size: 15px;
+  font-size: 14px;
   background: red;
   color: white;
 }
@@ -188,7 +188,7 @@
   }
 
   .nav-logo p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .nav-login-cart {
@@ -198,5 +198,9 @@
   .img-icon {
     width: 25px;
     padding: 1px;
+  }
+  .nav-menu-visible {
+    position: fixed;
+    z-index: 1000;
   }
 }

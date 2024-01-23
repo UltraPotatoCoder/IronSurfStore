@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import banner_allproducts from '../assets/img/banner_allproducts.png';
+import video_icon from '../assets/img/video-camera.png';
 import './CSS/FinsPage.css';
 
 const API_URL = 'https://iron-surf-store.adaptable.app/products';
@@ -34,7 +35,7 @@ function AllProducts() {
   }, []);
 
   const youtubeVideoUrl =
-    'https://www.youtube.com/watch?v=Z-nb1qxOjHU&ab_channel=FCSSurf';
+    'https://www.youtube.com/watch?v=ecHp___bEdo&ab_channel=Inspired';
 
   return (
     <div className='shop-category'>
@@ -44,7 +45,7 @@ function AllProducts() {
           alt='banner_fins'
           src={banner_allproducts}
         />
-        <div className='banner-text'>ALL PRODUCTS</div>
+        <div className='banner-text'>PRODUCTS</div>
       </div>
       <div className='shopcategory-products'>
         {items.map(item => (
@@ -73,7 +74,12 @@ function AllProducts() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        Check Video
+        Motivational{' '}
+        <img
+          style={{ width: '35px', margin: '20px', color: 'white' }}
+          src={video_icon}
+          alt=''
+        />
       </Link>
     </div>
   );
