@@ -1,11 +1,12 @@
 import './Navbar.css';
 import logo from '/src/assets/img/logo.png';
-import nav_dropdown from '../assets/img/dropdown_icon.png';
+import menu_icon from '../assets/img/menu.png';
 import cart_icon from '../assets/img/cart_icon.png';
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import cloud_img from '../assets/img/cloudy.png';
+import user_icon from '../assets/img/user_icon (1).png';
 
 function Navbar({ cartCount }) {
   const [menu, setMenu] = useState('home');
@@ -22,7 +23,7 @@ function Navbar({ cartCount }) {
         <img
           className='img-icon'
           onClick={dropdown_toggle}
-          src={nav_dropdown}
+          src={menu_icon}
           alt=''
         />
         <Link
@@ -47,7 +48,7 @@ function Navbar({ cartCount }) {
             }}
           >
             <Link style={{ textDecoration: 'none', color: 'black' }} to='/'>
-              Home
+              Products
             </Link>{' '}
             {menu === 'home' ? <hr /> : <></>}
           </li>
@@ -102,7 +103,7 @@ function Navbar({ cartCount }) {
           >
             <img
               style={{
-                width: '40px',
+                width: '45px',
                 display: 'flex',
                 alignItems: 'center',
               }}
@@ -111,7 +112,7 @@ function Navbar({ cartCount }) {
             />
           </Link>{' '}
           <Link to='/register'>
-            <button>Register</button>
+            <img style={{ width: '35px' }} src={user_icon} alt='' />
           </Link>
           <Link to='/cart'>
             <img src={cart_icon} alt='cart_icon' />
