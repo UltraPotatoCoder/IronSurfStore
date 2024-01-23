@@ -1,6 +1,6 @@
 import './Navbar.css';
 import logo from '/src/assets/img/logo.png';
-import menu_icon from '../assets/img/menu.png';
+import menu_icon from '../assets/img/menu_2.png';
 import cart_icon from '../assets/img/cart_icon.png';
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
@@ -47,8 +47,11 @@ function Navbar({ cartCount }) {
               setMenu('home');
             }}
           >
-            <Link style={{ textDecoration: 'none', color: 'black' }} to='/'>
-              Products
+            <Link
+              style={{ textDecoration: 'none', color: 'black' }}
+              to='/allproducts'
+            >
+              All Products
             </Link>{' '}
             {menu === 'home' ? <hr /> : <></>}
           </li>
@@ -115,7 +118,7 @@ function Navbar({ cartCount }) {
             <img style={{ width: '35px' }} src={user_icon} alt='' />
           </Link>
           <Link to='/cart'>
-            <img src={cart_icon} alt='cart_icon' />
+            <img style={{ width: '40px' }} src={cart_icon} alt='cart_icon' />
           </Link>
           <div className='nav-cart-count'>{cartCount}</div>
         </div>

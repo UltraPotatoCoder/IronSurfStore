@@ -12,6 +12,7 @@ import DecksPage from './Pages/DecksPage';
 import LeashesPage from './Pages/LeashesPage';
 import Weather from './Pages/Weather';
 import Register from './Components/Register/Register';
+import AllProducts from './Pages/AllProducts';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -35,6 +36,7 @@ function App() {
       <Navbar cartCount={cartCount} />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/allproducts' element={<AllProducts />} />
         <Route path='/fins' element={<FinsPage />} />
         <Route path='/decks' element={<DecksPage />} />
         <Route path='/leashes' element={<LeashesPage />} />
