@@ -73,6 +73,7 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 .buttonBox {
   display: flex;
   justify-content: flex-start;

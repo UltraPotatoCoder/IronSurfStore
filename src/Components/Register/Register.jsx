@@ -1,67 +1,72 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../../Pages/CSS/Login.css';
-const API_URL_USER = 'https://iron-surf-store.adaptable.app/users';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Register() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const initialUser = { email: '', password: '', username: '' };
 
-  const handleSubmit = async e => {
-    e.preventDefault();
+const Register = () => {
+  const [user, setUser] = useState(initialUser);
+  const navigate = useNavigate();
+
+  const signUp = async () => {
     try {
-      const response = await axios.post(API_URL_USER, {
-        email,
-        password,
-      });
-      console.log('user registered successfully', response.data);
+      const API_URL_REGISTER = `https://iron-surf-store.adaptable.app/register`;
+      if (user.username && user.email && user.password) {
+        const res = await axios.post(API_URL_REGISTER, user);
+        if (!!res) {
+          alert('Registered successfully!');
+          setUser(initialUser);
+          navigate('/login');
+        }
+      }
     } catch (error) {
-      console.log('Error registering user', error);
+      alert(error.message);
     }
+  };
+
+  const handleUserChange = ({ target }) => {
+    const { name, value } = target;
+    setUser(currentUser => ({
+      ...currentUser,
+      [name]: value,
+    }));
   };
 
   return (
     <div className='loginsignup'>
       <div className='loginsignup-container'>
-        <h1>Sign up</h1>
-
+        <h2>Sign up:</h2>
         <div className='loginsignup-fields'>
-          <form onSubmit={handleSubmit}>
-            <input type='text' placeholder='Name' />
-            <input
-              name=''
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              type='text'
-              placeholder='Email'
-            />
-            <input
-              name=''
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              type='text'
-              placeholder='Password'
-            />
-            <Link to='/login'>
-              <button type='submit'>Register</button>{' '}
-            </Link>
-          </form>
+          <input
+            type='text'
+            name='username'
+            value={user.username}
+            onChange={handleUserChange}
+            placeholder='Enter your full name'
+          />
         </div>
-
-        <p className='loginsignup-login'>
-          Already have an account?{' '}
-          <Link to='/login'>
-            <span>Login here</span>
-          </Link>
-        </p>
-        <div className='loginsignup-agree'>
-          <input type='checkbox' name='' id='' />
-          <p>By continuing, I agree with the terms of use & privacy policy.</p>
+        <div className='loginsignup-fields'>
+          <input
+            type='email'
+            name='email'
+            value={user.email}
+            onChange={handleUserChange}
+            placeholder='Enter your email'
+          />
         </div>
+        <div className='loginsignup-fields'>
+          <input
+            type='password'
+            name='password'
+            value={user.password}
+            onChange={handleUserChange}
+            placeholder='Enter password'
+          />
+        </div>
+        <button onClick={signUp}>Sign up</button>
       </div>
     </div>
   );
-}
+};
 
 export default Register;

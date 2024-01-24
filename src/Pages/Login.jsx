@@ -1,88 +1,71 @@
 import './CSS/Login.css';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import axios from 'axios';
-const API_URL_LOGIN = 'https://iron-surf-store.adaptable.app/users';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [userExists, setUserExists] = useState(true);
+const initialUser = { username: '', password: '' };
 
-  const checkUserInApi = async (email, password) => {
-    try {
-      const response = await axios.post(API_URL_LOGIN, {
-        email,
-        password,
-      });
+const Login = () => {
+  const [user, setUser] = useState(initialUser);
+  const navigate = useNavigate();
 
-      return response.status === 200;
-    } catch (error) {
-      console.log('Error checking user in API', error);
-      return false;
-    }
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setUser(currentUser => ({
+      ...currentUser,
+      [name]: value,
+    }));
   };
 
-  const handleLogin = async e => {
-    e.preventDefault();
-
-    const userExists = await checkUserInApi(email, password);
-
-    if (userExists) {
-      console.log('User logged in successfully');
-      setLoggedIn(true);
-    } else {
-      console.log('Invalid credentials');
-      setUserExists(false);
+  const handleLogin = async () => {
+    const API_URL_LOGIN = `https://iron-surf-store.adaptable.app/login`;
+    try {
+      if (user.username && user.password) {
+        const response = await axios.post(API_URL_LOGIN, user);
+        console.log('Login response:', response);
+        if (response.status === 200) {
+          alert('Logged in successfully!');
+          setUser(initialUser);
+          navigate('/');
+        } else {
+          alert('Login failed. Please check your credentials.');
+        }
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('Login failed. Please check your credentials.');
     }
   };
 
   return (
     <div className='loginsignup'>
       <div className='loginsignup-container'>
-        <h1>Sign in</h1>
-
+        <h2>Login:</h2>
         <div className='loginsignup-fields'>
-          <form onSubmit={handleLogin}>
-            <input
-              name=''
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              type='text'
-              placeholder='Email'
-            />
-            <input
-              name=''
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              type='password'
-              placeholder='Password'
-            />
-            <button type='submit'>Login</button>{' '}
-          </form>
+          <input
+            type='text'
+            name='username'
+            value={user.username}
+            onChange={handleChange}
+            placeholder='Enter your username'
+          />
         </div>
-
-        <div>
-          {loggedIn ? (
-            <p>
-              Already logged in! Go to <Link to='/'>Home</Link>.
-            </p>
-          ) : (
-            <p>
-              {userExists
-                ? "Don't have an account? Go to "
-                : 'User not found! Redirecting to '}
-              <Link to={userExists ? '/' : '/register'}>
-                {userExists ? 'Home' : 'Register'}
-              </Link>
-              .
-            </p>
-          )}
+        <div className='loginsignup-fields'>
+          <input
+            type='password'
+            name='password'
+            value={user.password}
+            onChange={handleChange}
+            placeholder='Enter password'
+          />
         </div>
+        <button onClick={handleLogin}>Login</button>
+        <h6>
+          Click <Link to='/register'>Here</Link> to sign up
+        </h6>
       </div>
     </div>
   );
-}
+};
 
 export default Login;
