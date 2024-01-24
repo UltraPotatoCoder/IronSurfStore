@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import leashes_banner from '../assets/img/banner_leashes.png';
+import video_icon from '../assets/img/icon_camera.png';
 
 const API_URL = 'https://iron-surf-store.adaptable.app/products';
 
@@ -71,7 +72,7 @@ function LeashesPage() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        Check Video
+        About Leashes <img src={video_icon} alt='' />
       </Link>
     </div>
   );

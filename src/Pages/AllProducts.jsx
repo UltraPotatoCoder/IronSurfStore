@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import banner_allproducts from '../assets/img/banner_allproducts.png';
-import video_icon from '../assets/img/video-camera.png';
+import video_icon from '../assets/img/icon_camera.png';
 import './CSS/FinsPage.css';
 
 const API_URL = 'https://iron-surf-store.adaptable.app/products';
@@ -74,12 +74,7 @@ function AllProducts() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        Motivational{' '}
-        <img
-          style={{ width: '35px', margin: '20px', color: 'white' }}
-          src={video_icon}
-          alt=''
-        />
+        Motivational <img src={video_icon} alt='' />
       </Link>
     </div>
   );

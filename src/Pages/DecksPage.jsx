@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import decks_banner from '../assets/img/banner_decks.png';
+import video_icon from '../assets/img/icon_camera.png';
 
 const API_URL = 'https://iron-surf-store.adaptable.app/products';
 
@@ -66,7 +67,7 @@ function DecksPage() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        Check Video
+        About Decks <img src={video_icon} alt='' />
       </Link>
     </div>
   );

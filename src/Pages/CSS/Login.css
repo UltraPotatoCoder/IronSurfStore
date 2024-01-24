@@ -147,4 +147,8 @@
     height: 50px;
     font-size: 16px;
   }
+  .video-icon {
+    width: 10px; /* Adjust the width as needed */
+    margin: 10px; /* Adjust the margin as needed */
+  }
 }

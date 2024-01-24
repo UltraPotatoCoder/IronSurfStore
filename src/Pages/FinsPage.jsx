@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import fins_banner from '../assets/img/banner_fins.png';
+import video_icon from '../assets/img/icon_camera.png';
 import './CSS/FinsPage.css';
 
 const API_URL = 'https://iron-surf-store.adaptable.app/products';
@@ -72,7 +73,7 @@ function FinsPage() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        Check Video
+        About Fins <img src={video_icon} alt='' />
       </Link>
     </div>
   );

@@ -44,7 +44,7 @@ function Navbar({ cartCount }) {
         <ul ref={menuRef} className='nav-menu'>
           <li
             onClick={() => {
-              setMenu('home');
+              setMenu('allproducts');
             }}
           >
             <Link
@@ -53,7 +53,7 @@ function Navbar({ cartCount }) {
             >
               All Products
             </Link>{' '}
-            {menu === 'home' ? <hr /> : <></>}
+            {menu === 'allproducts' ? <hr /> : <></>}
           </li>
           <li
             onClick={() => {

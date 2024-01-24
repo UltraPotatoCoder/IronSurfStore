@@ -3,6 +3,10 @@
   margin: 30px auto;
   width: 82%;
 }
+.shopcategory-loadmore img {
+  width: 30px;
+  margin: 10px;
+}
 .banner-container {
   position: relative;
   text-align: center;
@@ -127,6 +131,15 @@
     margin-top: 3px;
   }
   .banner-text {
-    font-size: 15px;
+    font-size: 12px;
+  }
+  .video-icon {
+    width: 15px;
+  }
+  .shopcategory-loadmore {
+    font-size: 13px;
+  }
+  .shopcategory-loadmore img {
+    width: 25px;
   }
 }
