@@ -10,7 +10,7 @@ const Register = () => {
 
   const signUp = async () => {
     try {
-      const API_URL_REGISTER = `https://iron-surf-store.adaptable.app/register`;
+      const API_URL_REGISTER = `https://iron-surf-store.adaptable.app/users`;
       if (user.username && user.email && user.password) {
         const res = await axios.post(API_URL_REGISTER, user);
         if (!!res) {

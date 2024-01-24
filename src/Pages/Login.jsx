@@ -3,29 +3,28 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-const initialUser = { username: '', password: '' };
+const initialUser = { email: '', password: '' };
+const API_URL_LOGIN = 'https://iron-surf-store.adaptable.app/users';
 
 const Login = () => {
   const [user, setUser] = useState(initialUser);
   const navigate = useNavigate();
 
-  const handleChange = ({ target }) => {
-    const { name, value } = target;
-    setUser(currentUser => ({
-      ...currentUser,
-      [name]: value,
-    }));
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setUser(prevUser => ({ ...prevUser, [name]: value }));
   };
 
   const handleLogin = async () => {
-    const API_URL_LOGIN = `https://iron-surf-store.adaptable.app/login`;
     try {
-      if (user.username && user.password) {
-        const response = await axios.post(API_URL_LOGIN, user);
-        console.log('Login response:', response);
-        if (response.status === 200) {
+      if (user.email && user.password) {
+        const response = await axios.get(
+          `${API_URL_LOGIN}?email=${user.email}&password=${user.password}`
+        );
+
+        if (response.data.length > 0) {
           alert('Logged in successfully!');
-          setUser(initialUser);
+          setUser({ email: '', password: '' });
           navigate('/');
         } else {
           alert('Login failed. Please check your credentials.');
@@ -44,8 +43,8 @@ const Login = () => {
         <div className='loginsignup-fields'>
           <input
             type='text'
-            name='username'
-            value={user.username}
+            name='email'
+            value={user.email}
             onChange={handleChange}
             placeholder='Enter your username'
           />
