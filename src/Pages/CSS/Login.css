@@ -18,6 +18,7 @@
 }
 
 .loginsignup h2 {
+  padding: 20px;
   margin-bottom: 20px;
   color: #333;
 }
@@ -77,6 +78,7 @@
 
   .loginsignup input {
     width: 80%;
+    padding-top: 30px;
     height: 20%;
   }
 
@@ -87,6 +89,7 @@
 
   .loginsignup h6 {
     margin-top: 10px;
+    font-size: 30px;
   }
 }
 @media (max-width: 800px) {

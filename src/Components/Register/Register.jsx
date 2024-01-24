@@ -1,6 +1,8 @@
+import '../../Pages/CSS/Login.css';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const initialUser = { email: '', password: '', username: '' };
 
@@ -42,7 +44,7 @@ const Register = () => {
             name='username'
             value={user.username}
             onChange={handleUserChange}
-            placeholder='Enter your full name'
+            placeholder='Enter name'
           />
         </div>
         <div className='loginsignup-fields'>
@@ -51,7 +53,7 @@ const Register = () => {
             name='email'
             value={user.email}
             onChange={handleUserChange}
-            placeholder='Enter your email'
+            placeholder='Enter email'
           />
         </div>
         <div className='loginsignup-fields'>
@@ -64,6 +66,9 @@ const Register = () => {
           />
         </div>
         <button onClick={signUp}>Sign up</button>
+        <h6 style={{ fontSize: '16px', paddingTop: '25px' }}>
+          Returning customer? <Link to='/login'>Login here</Link>
+        </h6>
       </div>
     </div>
   );

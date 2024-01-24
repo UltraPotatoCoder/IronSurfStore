@@ -46,7 +46,7 @@ const Login = () => {
             name='email'
             value={user.email}
             onChange={handleChange}
-            placeholder='Enter your username'
+            placeholder='Enter email'
           />
         </div>
         <div className='loginsignup-fields'>
@@ -59,9 +59,6 @@ const Login = () => {
           />
         </div>
         <button onClick={handleLogin}>Login</button>
-        <h6>
-          Click <Link to='/register'>Here</Link> to sign up
-        </h6>
       </div>
     </div>
   );
