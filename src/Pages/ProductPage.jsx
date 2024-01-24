@@ -78,12 +78,12 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
               <img
                 src={oneItem.image_detail_1}
                 alt=''
-                onClick={() => toggleModal(oneItem.image_detail_1)} // Open modal with image_detail_1
+                onClick={() => toggleModal(oneItem.image_detail_1)}
               />
               <img
                 src={oneItem.image_detail_2}
                 alt=''
-                onClick={() => toggleModal(oneItem.image_detail_2)} // Open modal with image_detail_2
+                onClick={() => toggleModal(oneItem.image_detail_2)}
               />
             </div>
             <div className='productdisplay-img'>
@@ -91,7 +91,7 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
                 className='productdisplay-main-img'
                 src={oneItem.image}
                 alt='oneItem image'
-                onClick={() => toggleModal(oneItem.image)} // Open modal with main image
+                onClick={() => toggleModal(oneItem.image)}
               />
             </div>
           </div>
@@ -137,7 +137,7 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
               src={modalImage}
               alt='Modal Image'
               className='modal-image'
-              onClick={() => setIsModalOpen(false)} // Close the modal when clicking the image
+              onClick={() => setIsModalOpen(false)}
             />
           </div>
         </div>
