@@ -18,7 +18,7 @@ function Offers() {
           target='_blank'
         >
           <button>
-            Check <img src={video_icon} alt='' />
+            Get Inspired <img src={video_icon} alt='' />
           </button>
         </Link>
       </div>

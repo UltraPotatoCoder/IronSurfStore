@@ -74,7 +74,7 @@ function AllProducts() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        Accessories Tips <img src={video_icon} alt='' />
+        Explore <img src={video_icon} alt='' />
       </Link>
     </div>
   );
