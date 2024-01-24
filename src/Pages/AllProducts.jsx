@@ -35,7 +35,7 @@ function AllProducts() {
   }, []);
 
   const youtubeVideoUrl =
-    'https://www.youtube.com/watch?v=ecHp___bEdo&ab_channel=Inspired';
+    'https://www.youtube.com/watch?v=2smg9J8N6GE&t=7s&ab_channel=StokedForTravel';
 
   return (
     <div className='shop-category'>
@@ -74,7 +74,7 @@ function AllProducts() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        Motivational <img src={video_icon} alt='' />
+        Accessories Tips <img src={video_icon} alt='' />
       </Link>
     </div>
   );

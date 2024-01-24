@@ -98,8 +98,8 @@
   }
   .top-bar input {
     display: flex;
-    width: 200px;
-    height: 50px;
+    width: 180px;
+    height: 40px;
     background: #ebfffc;
     border: none;
     outline: none;
@@ -113,8 +113,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background: #ebfffc;
     border-radius: 40px;
     cursor: pointer;
