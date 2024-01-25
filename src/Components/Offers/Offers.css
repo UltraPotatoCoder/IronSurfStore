@@ -130,6 +130,9 @@
 }
 @media (max-width: 500px) {
   .offers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80%;
     height: 25vh;
     margin-bottom: 50px;
@@ -139,6 +142,11 @@
   }
   .offers-left p {
     font-size: 8px;
+  }
+  .offers-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .offers-right img {
     margin: 0;
