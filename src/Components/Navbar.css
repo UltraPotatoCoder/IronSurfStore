@@ -177,7 +177,8 @@
 }
 @media (max-width: 500px) {
   .navbar {
-    max-width: 100%;
+    max-width: 90%;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,7 +198,7 @@
     gap: 30px;
   }
   .img-icon {
-    width: 25px;
+    width: 30px;
     padding: 1px;
   }
   .nav-menu-visible {

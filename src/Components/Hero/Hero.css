@@ -22,7 +22,7 @@
 
 .hero-left p {
   color: #171717;
-  font-size: 5.625rem;
+  font-size: 5rem;
   font-weight: 700;
 }
 
@@ -33,7 +33,8 @@
 }
 
 .hero-hand-icon img {
-  width: 105px;
+  width: 150px;
+  margin-left: 40px;
 }
 
 .hero-latest-btn {
@@ -141,15 +142,16 @@
     font-size: 14px;
   }
   .hero-left p {
-    font-size: 30px;
+    font-size: 25px;
   }
   .hero-hand-icon img {
+    margin: 0;
     width: 30px;
   }
   .hero-latest-btn {
     width: 150px;
-    height: 40px;
-    font-size: 13px;
+    height: 35px;
+    font-size: 11px;
   }
   .hero-right img {
     width: 130px;

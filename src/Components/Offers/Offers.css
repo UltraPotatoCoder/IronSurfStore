@@ -134,19 +134,20 @@
     margin-bottom: 50px;
   }
   .offers-left h1 {
-    font-size: 15px;
+    font-size: 13px;
   }
   .offers-left p {
     font-size: 8px;
   }
   .offers-right img {
+    margin: 0;
     width: 140px;
   }
   .offers-left button {
     width: 100px;
     max-width: 80px;
     height: 25px;
-    font-size: 10px;
+    font-size: 7px;
     margin-top: 15px;
     gap: 5px;
   }
