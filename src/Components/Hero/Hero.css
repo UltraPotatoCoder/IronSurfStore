@@ -147,7 +147,8 @@
   }
   .hero-hand-icon img {
     margin: 0;
-    width: 30px;
+    padding-bottom: 5px;
+    width: 50px;
   }
   .hero-latest-btn {
     width: 150px;
