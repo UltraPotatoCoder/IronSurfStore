@@ -177,7 +177,7 @@
 }
 @media (max-width: 500px) {
   .navbar {
-    margin: 0;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,12 +186,9 @@
   .nav-logo {
     transform: scale(0.7);
   }
-
-  .nav-logo p {
-    font-size: 15px;
-    margin: 0;
+  .nav-logo img {
+    transform: scale(0.9);
   }
-
   .nav-login-cart {
     transform: scale(0.6);
   }
