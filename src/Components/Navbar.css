@@ -13,12 +13,13 @@
 
 .nav-logo {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-}
-
-.nav-logo p {
-  font-family: 'Roboto Slab', serif;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   color: #4a4949;
   font-size: 25px;
 }
@@ -185,16 +186,22 @@
 
   .nav-logo {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    display: inline-block;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #4a4949;
+    font-size: 25px;
   }
   .nav-logo p {
     font-size: 10px;
   }
 
   .nav-logo img {
-    display: none;
+    width: 17px;
   }
   .nav-login-cart {
     transform: scale(0.6);
