@@ -28,10 +28,6 @@ function Navbar({ cartCount }) {
       <Link
         style={{
           textDecoration: 'none',
-          color: 'black',
-          fontSize: '15px',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: '550',
         }}
         to='/'
       >

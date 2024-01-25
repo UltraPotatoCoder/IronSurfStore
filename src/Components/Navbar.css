@@ -4,6 +4,7 @@
   padding: 16px;
   box-shadow: 0 1px 3px -2px black;
   align-items: center;
+  margin: 0;
 }
 
 .img-icon {
@@ -22,6 +23,7 @@
   font-weight: 500;
   color: #4a4949;
   font-size: 25px;
+  margin: 0;
 }
 
 .nav-menu {
@@ -176,17 +178,16 @@
     display: block;
   }
 }
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
   .navbar {
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .nav-logo {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     cursor: pointer;
