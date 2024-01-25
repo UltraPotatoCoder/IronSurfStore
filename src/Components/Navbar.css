@@ -184,15 +184,14 @@
   }
 
   .nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: scale(0.7);
   }
-  .nav-logo p {
-    margin: 0;
-    transform: scale(0.7);
-    display: inline-block;
-  }
+
   .nav-logo img {
-    transform: scale(0.7);
+    transform: scale(0.6);
     margin: 0;
   }
   .nav-login-cart {
