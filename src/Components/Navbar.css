@@ -202,7 +202,7 @@
   }
 
   .nav-logo img {
-    width: 17px;
+    display: none;
   }
   .nav-login-cart {
     transform: scale(0.6);
