@@ -6,11 +6,6 @@
   align-items: center;
 }
 
-.img-icon {
-  width: 15px;
-  display: none;
-}
-
 .nav-logo {
   display: flex;
   align-items: center;
@@ -195,10 +190,7 @@
   .nav-login-cart {
     transform: scale(0.6);
   }
-  .img-icon {
-    width: 30px;
-    padding: 1px;
-  }
+
   .nav-menu-visible {
     position: fixed;
     z-index: 1000;
