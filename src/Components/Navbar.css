@@ -188,6 +188,7 @@
   }
   .nav-logo p {
     transform: scale(0.9);
+    display: inline-block;
   }
   .nav-logo img {
     transform: scale(0.9);
