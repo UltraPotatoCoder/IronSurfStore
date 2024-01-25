@@ -12,20 +12,6 @@
   display: none;
 }
 
-.nav-logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  color: #4a4949;
-  font-size: 25px;
-  margin: 0;
-}
-
 .nav-menu {
   display: flex;
   align-items: center;
@@ -186,23 +172,13 @@
     justify-content: space-around;
   }
 
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    color: #4a4949;
-    font-size: 25px;
-  }
   .nav-logo p {
     font-size: 10px;
     display: inline-block;
   }
 
   .nav-logo img {
-    width: 90px;
+    width: 110px;
   }
   .nav-login-cart {
     transform: scale(0.6);
