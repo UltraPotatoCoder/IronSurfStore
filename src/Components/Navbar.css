@@ -177,12 +177,10 @@
 }
 @media (max-width: 500px) {
   .navbar {
-    max-width: 100%;
-    margin: auto;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: auto;
   }
 
   .nav-logo {
@@ -196,7 +194,6 @@
 
   .nav-login-cart {
     transform: scale(0.6);
-    gap: 30px;
   }
   .img-icon {
     width: 30px;
