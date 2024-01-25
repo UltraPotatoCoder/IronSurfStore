@@ -18,110 +18,102 @@ function Navbar({ cartCount }) {
   };
 
   return (
-    <div className='nav-container'>
-      <div className='navbar'>
-        <img
-          className='img-icon'
-          onClick={dropdown_toggle}
-          src={menu_icon}
-          alt=''
-        />
-        <Link
-          style={{
-            textDecoration: 'none',
-            color: 'black',
-            fontSize: '15px',
-            fontFamily: 'Poppins, sans-serif',
-            fontWeight: '550',
+    <div className='navbar'>
+      <img
+        className='img-icon'
+        onClick={dropdown_toggle}
+        src={menu_icon}
+        alt=''
+      />
+      <Link
+        style={{
+          textDecoration: 'none',
+          color: 'black',
+          fontSize: '15px',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: '550',
+        }}
+        to='/'
+      >
+        <div className='nav-logo'>
+          <img src={logo} alt='logo' />
+          <p>IRON SURF STORE</p>
+        </div>
+      </Link>
+      <ul ref={menuRef} className='nav-menu'>
+        <li
+          onClick={() => {
+            setMenu('allproducts');
           }}
-          to='/'
         >
-          <div className='nav-logo'>
-            <img src={logo} alt='logo' />
-            <p>IRON SURF STORE</p>
-          </div>
-        </Link>
-        <ul ref={menuRef} className='nav-menu'>
-          <li
-            onClick={() => {
-              setMenu('allproducts');
-            }}
-          >
-            <Link
-              style={{ textDecoration: 'none', color: 'black' }}
-              to='/allproducts'
-            >
-              All Products
-            </Link>{' '}
-            {menu === 'allproducts' ? <hr /> : <></>}
-          </li>
-          <li
-            onClick={() => {
-              setMenu('fins');
-            }}
-          >
-            <Link style={{ textDecoration: 'none', color: 'black' }} to='/fins'>
-              Fins
-            </Link>{' '}
-            {menu === 'fins' ? <hr /> : <></>}
-          </li>
-          <li
-            onClick={() => {
-              setMenu('decks');
-            }}
-          >
-            <Link
-              style={{ textDecoration: 'none', color: 'black' }}
-              to='/decks'
-            >
-              Decks
-            </Link>{' '}
-            {menu === 'decks' ? <hr /> : <></>}
-          </li>
-          <li
-            onClick={() => {
-              setMenu('leashes');
-            }}
-          >
-            <Link
-              style={{ textDecoration: 'none', color: 'black' }}
-              to='/leashes'
-            >
-              Leashes
-            </Link>{' '}
-            {menu === 'leashes' ? <hr /> : <></>}
-          </li>
-          <li
-            onClick={() => {
-              setMenu('weather');
-            }}
-          >
-            {menu === 'weather' ? <hr /> : <></>}
-          </li>
-        </ul>
-        <div className='nav-login-cart'>
           <Link
             style={{ textDecoration: 'none', color: 'black' }}
-            to='/weather'
+            to='/allproducts'
           >
-            <img
-              style={{
-                width: '45px',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-              src={cloud_img}
-              alt=''
-            />
+            All Products
           </Link>{' '}
-          <Link to='/register'>
-            <img style={{ width: '35px' }} src={user_icon} alt='' />
-          </Link>
-          <Link to='/cart'>
-            <img style={{ width: '40px' }} src={cart_icon} alt='cart_icon' />
-          </Link>
-          <div className='nav-cart-count'>{cartCount}</div>
-        </div>
+          {menu === 'allproducts' ? <hr /> : <></>}
+        </li>
+        <li
+          onClick={() => {
+            setMenu('fins');
+          }}
+        >
+          <Link style={{ textDecoration: 'none', color: 'black' }} to='/fins'>
+            Fins
+          </Link>{' '}
+          {menu === 'fins' ? <hr /> : <></>}
+        </li>
+        <li
+          onClick={() => {
+            setMenu('decks');
+          }}
+        >
+          <Link style={{ textDecoration: 'none', color: 'black' }} to='/decks'>
+            Decks
+          </Link>{' '}
+          {menu === 'decks' ? <hr /> : <></>}
+        </li>
+        <li
+          onClick={() => {
+            setMenu('leashes');
+          }}
+        >
+          <Link
+            style={{ textDecoration: 'none', color: 'black' }}
+            to='/leashes'
+          >
+            Leashes
+          </Link>{' '}
+          {menu === 'leashes' ? <hr /> : <></>}
+        </li>
+        <li
+          onClick={() => {
+            setMenu('weather');
+          }}
+        >
+          {menu === 'weather' ? <hr /> : <></>}
+        </li>
+      </ul>
+      <div className='nav-login-cart'>
+        <Link style={{ textDecoration: 'none', color: 'black' }} to='/weather'>
+          <img
+            style={{
+              width: '45px',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+            src={cloud_img}
+            alt=''
+          />
+        </Link>{' '}
+        <Link to='/register'>
+          <img style={{ width: '35px' }} src={user_icon} alt='' />
+        </Link>
+        <Link to='/cart'>
+          <img style={{ width: '40px' }} src={cart_icon} alt='cart_icon' />
+        </Link>
+        <div className='nav-cart-count'>{cartCount}</div>
       </div>
     </div>
   );

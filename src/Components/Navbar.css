@@ -191,7 +191,6 @@
   }
   .nav-logo img {
     transform: scale(0.9);
-    display: none;
   }
   .nav-login-cart {
     transform: scale(0.6);
