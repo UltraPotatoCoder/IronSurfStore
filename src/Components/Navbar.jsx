@@ -33,7 +33,6 @@ function Navbar({ cartCount }) {
       >
         <div className='nav-logo'>
           <img src={logo} alt='logo' />
-          <p>IRON SURF STORE</p>
         </div>
       </Link>
       <ul ref={menuRef} className='nav-menu'>
