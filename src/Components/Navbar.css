@@ -177,13 +177,14 @@
 }
 @media (max-width: 500px) {
   .navbar {
-    max-width: 90%;
+    max-width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: auto;
   }
+
   .nav-logo {
     transform: scale(0.7);
   }
