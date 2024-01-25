@@ -190,7 +190,7 @@
     display: inline-block;
   }
   .nav-logo p {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .nav-logo img {
@@ -201,7 +201,7 @@
   }
   .img-icon {
     width: 25px;
-    padding-left: 25px;
+    padding-left: 30px;
   }
 
   .nav-menu-visible {
