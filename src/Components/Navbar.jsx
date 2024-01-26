@@ -108,7 +108,7 @@ function Navbar({ cartCount }) {
         <Link to='/cart'>
           <img style={{ width: '40px' }} src={cart_icon} alt='cart_icon' />
         </Link>
-        <div className='nav-cart-count'>{cartCount}</div>
+        {cartCount > 0 && <div className='nav-cart-count'>{cartCount}</div>}
       </div>
     </div>
   );
