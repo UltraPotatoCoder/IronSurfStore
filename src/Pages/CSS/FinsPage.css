@@ -125,11 +125,16 @@
 }
 @media (max-width: 500px) {
   .shopcategory-products {
+    display: grid;
+    align-items: center;
+    justify-content: center;
     grid-template-columns: 1fr 1fr;
     width: 85%;
+    gap: 25px;
   }
   .shopcategory-products h3 {
-    font-size: 10px;
+    margin-right: 15px;
+    font-size: 8px;
   }
   .product-prices {
     display: flex;
