@@ -23,7 +23,7 @@ const Login = () => {
         );
 
         if (response.data.length > 0) {
-          alert('Logged in successfully!');
+          alert(`Logged in successfully ${user.email} !`);
           setUser({ email: '', password: '' });
           navigate('/');
         } else {
@@ -59,6 +59,9 @@ const Login = () => {
           />
         </div>
         <button onClick={handleLogin}>Login</button>
+        <h6 style={{ fontSize: '16px', paddingTop: '25px' }}>
+          New customer? <Link to='/register'>Sign Up</Link>
+        </h6>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const Register = () => {
       if (user.username && user.email && user.password) {
         const res = await axios.post(API_URL_REGISTER, user);
         if (!!res) {
-          alert('Registered successfully!');
+          alert(`Registered successfully! ${user.username}`);
           setUser(initialUser);
           navigate('/login');
         }

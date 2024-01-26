@@ -20,7 +20,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Define quatro colunas */
   margin-top: 50px;
-  gap: 30px;
+  gap: 50px;
 }
 
 .collections p {

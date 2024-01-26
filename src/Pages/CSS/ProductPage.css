@@ -33,11 +33,13 @@
 
 .productdisplay-img-list img {
   height: 170px;
+  margin: 10px;
 }
 
 .productdisplay-main-img {
-  width: 400px;
-  height: auto;
+  width: 500px;
+  padding-left: 20px;
+  margin: 0;
 }
 
 .productdisplay-right {
