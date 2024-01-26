@@ -3,13 +3,18 @@
   justify-content: space-around;
   padding: 16px;
   box-shadow: 0 1px 3px -2px black;
-  align-items: center;
-  margin: 0;
 }
 
-.img-icon {
-  width: 15px;
-  display: none;
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo p {
+  color: #171717;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 .nav-menu {
@@ -43,6 +48,9 @@
   display: flex;
   align-items: center;
   gap: 45px;
+}
+.img-icon {
+  display: none;
 }
 
 .nav-login-cart button {
@@ -172,13 +180,8 @@
     justify-content: space-around;
   }
 
-  .nav-logo p {
-    font-size: 10px;
-    display: inline-block;
-  }
-
   .nav-logo img {
-    width: 110px;
+    width: 140px;
     margin-left: 30px;
   }
   .nav-login-cart {
