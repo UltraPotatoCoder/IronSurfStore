@@ -14,6 +14,7 @@ import Weather from './Pages/Weather';
 import Register from './Components/Register/Register';
 import AllProducts from './Pages/AllProducts';
 import Logout from './Components/Logout';
+import CheckoutPage from './Pages/CheckoutPage';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -60,6 +61,12 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/logout' element={<Logout />} />
+        <Route
+          path='/checkout'
+          element={
+            <CheckoutPage cartCount={cartCount} setCartCount={setCartCount} />
+          }
+        />
       </Routes>
       <Footer />
     </div>

@@ -1,8 +1,8 @@
 import './CSS/CartItems.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import remove_icon from '../assets/img/cart_cross_icon.png';
+import { Link } from 'react-router-dom';
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app';
 
 function CartItems({ addToCart, removeFromCart, removeAllItemsCross }) {
@@ -145,7 +145,9 @@ function CartItems({ addToCart, removeFromCart, removeAllItemsCross }) {
               <h3>€{getTotalCartAmount()}</h3>
             </div>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <Link to='/checkout'>
+            <button>PROCEED TO CHECKOUT</button>
+          </Link>
         </div>
       </div>
     </div>
