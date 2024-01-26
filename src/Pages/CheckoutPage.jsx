@@ -1,11 +1,10 @@
-import './CSS/CartItems.css';
 import './CSS/CheckoutPage.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app';
 
-function checkoutItems({ cartCount, setCartCount }) {
+function checkoutItems({ cartCount, setCartCount, cartItems, setCartItems }) {
   const [checkoutItems, setCheckoutItems] = useState([]);
   const [thankYouMessage, setThankYouMessage] = useState(false);
   const navigate = useNavigate();
@@ -14,6 +13,7 @@ function checkoutItems({ cartCount, setCartCount }) {
     e.preventDefault();
     setThankYouMessage(true);
     setCartCount((cartCount = 0));
+    setCartItems([]);
     setTimeout(() => {
       navigate('/');
     }, 3000);
@@ -42,70 +42,74 @@ function checkoutItems({ cartCount, setCartCount }) {
   };
 
   return (
-    <div className='cartitems'>
-      <hr />
+    <div className='everything-box'>
+      {!thankYouMessage && (
+        <div className='cartitems'>
+          <hr />
 
-      {checkoutItems.map(item => (
-        <div key={item.id} className='cartitems-format cartitems-format-main'>
-          <img
-            src={item.productImage}
-            alt=''
-            className='carticon-product-icon'
-          />
-          <p>{item.productTitle}</p>
-          <p>€{Number(item.new_price).toFixed(2)}</p>
-          <div className='buttonBox'>
-            <span className='cartitems-quantity'>{item.quantity}</span>
-          </div>
-          <p>€{(Number(item.new_price) * Number(item.quantity)).toFixed(2)}</p>
-        </div>
-      ))}
-
-      <hr className='form-hr' />
-
-      {thankYouMessage ? (
-        <div className='thank-you-message'>
-          <p>Thank you for buying at Iron Surf Store!</p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Name:
-            <input type='text' name='name' required />
-          </label>
-          <label>
-            Email:
-            <input type='email' name='email' required />
-          </label>
-          <label>
-            Card Number:
-            <input type='text' name='cardNumber' required />
-          </label>
-          <label>
-            Expiration Date:
-            <input type='text' name='expirationDate' required />
-          </label>
-          <label>
-            CVV:
-            <input type='text' name='cvv' required />
-          </label>
-
-          <button type='submit'>Proceed to Payment</button>
-        </form>
-      )}
-
-      <div className='checkout-total'>
-        <h2>Order Summary</h2>
-        <div>
           {checkoutItems.map(item => (
             <div
               key={item.id}
               className='cartitems-format cartitems-format-main'
             >
-              <p>Total: €{getTotalCartAmount()}</p>
+              <img
+                src={item.productImage}
+                alt=''
+                className='carticon-product-icon'
+              />
+              <p>{item.productTitle}</p>
+              <p>€{Number(item.new_price).toFixed(2)}</p>
+              <div className='buttonBox'>
+                <span className='cartitems-quantity'>{item.quantity}</span>
+              </div>
+              <p>
+                €{(Number(item.new_price) * Number(item.quantity)).toFixed(2)}
+              </p>
             </div>
           ))}
+
+          <hr className='form-hr' />
         </div>
+      )}
+      <div className='box-summary'>
+        {thankYouMessage ? (
+          <div className='thank-you-message'>
+            <p>Thank you for buying at Iron Surf Store!</p>
+          </div>
+        ) : (
+          <div className='form-box'>
+            <form onSubmit={handleSubmit}>
+              <label>
+                Name:
+                <input type='text' name='name' required />
+              </label>
+              <label>
+                Email:
+                <input type='email' name='email' required />
+              </label>
+              <label>
+                Card Number:
+                <input type='text' name='cardNumber' required />
+              </label>
+              <label>
+                Expiration Date:
+                <input type='text' name='expirationDate' required />
+              </label>
+              <label>
+                CVV:
+                <input type='text' name='cvv' required />
+              </label>
+              <div className='checkout-total'>
+                <h2>Order Summary</h2>
+                <div>
+                  <p>Fee: Free</p>
+                  <p>Total: €{getTotalCartAmount()}</p>
+                </div>
+              </div>
+              <button type='submit'>Pay Now</button>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   );

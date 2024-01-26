@@ -18,6 +18,7 @@ import CheckoutPage from './Pages/CheckoutPage';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
   const addToCart = () => {
     setCartCount(cartCount + 1);
@@ -64,7 +65,12 @@ function App() {
         <Route
           path='/checkout'
           element={
-            <CheckoutPage cartCount={cartCount} setCartCount={setCartCount} />
+            <CheckoutPage
+              cartCount={cartCount}
+              setCartCount={setCartCount}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
           }
         />
       </Routes>
