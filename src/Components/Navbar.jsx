@@ -4,6 +4,7 @@ import menu_icon from '../assets/img/menu_2.png';
 import cart_icon from '../assets/img/cart_icon.png';
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import cloud_img from '../assets/img/cloudy.png';
 import user_icon from '../assets/img/user_icon (1).png';
@@ -39,6 +40,7 @@ function Navbar({ cartCount }) {
         <li
           onClick={() => {
             setMenu('allproducts');
+            dropdown_toggle();
           }}
         >
           <Link
@@ -52,6 +54,7 @@ function Navbar({ cartCount }) {
         <li
           onClick={() => {
             setMenu('fins');
+            dropdown_toggle();
           }}
         >
           <Link style={{ textDecoration: 'none', color: 'black' }} to='/fins'>
@@ -62,6 +65,7 @@ function Navbar({ cartCount }) {
         <li
           onClick={() => {
             setMenu('decks');
+            dropdown_toggle();
           }}
         >
           <Link style={{ textDecoration: 'none', color: 'black' }} to='/decks'>
@@ -72,6 +76,7 @@ function Navbar({ cartCount }) {
         <li
           onClick={() => {
             setMenu('leashes');
+            dropdown_toggle();
           }}
         >
           <Link
