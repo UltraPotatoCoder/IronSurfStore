@@ -38,10 +38,6 @@ input {
   margin-top: 20px;
 }
 
-button:hover {
-  background-color: #ff4141;
-}
-
 .checkout-total {
   display: flex;
   flex-direction: column;
@@ -86,7 +82,7 @@ button:hover {
   padding: 20px 0px;
   color: #454545;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .cartitems-format-main p {
   padding-left: 15px;

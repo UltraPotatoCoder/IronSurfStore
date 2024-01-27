@@ -77,18 +77,18 @@ function CartItems({ addToCart, removeFromCart, removeAllItemsCross }) {
 
   return (
     <div className='cartitems'>
-      <div className='cartitems-format-main'>
-        <p>Products</p>
-        <p>Title</p>
-        <p>Price</p>
-        <p>Quantity</p>
-        <p>Total</p>
-        <p>Remove</p>
+      <div className='cartitems-format'>
+        <p className='Products-css'>Products</p>
+        <p className='Title-css'>Title</p>
+        <p className='Price-css'>Price</p>
+        <p className='Quantity-css'>Quantity</p>
+        <p className='Total-css'>Total</p>
+        <p className='Remove-css'>Remove</p>
       </div>
       <hr />
 
       {cartItems.map(item => (
-        <div key={item.id} className='cartitems-format cartitems-format-main'>
+        <div key={item.id} className='cartitems-format-main'>
           <img
             src={item.productImage}
             alt=''

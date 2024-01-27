@@ -25,8 +25,35 @@
 }
 .cartitems-format {
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 100;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
+
+.cartitems-format p {
+  padding-bottom: 20px;
+}
+
+.Title-css {
+  padding-left: 15px;
+}
+
+.Price-css {
+  padding-left: 23px;
+}
+
+.Quantity-css {
+  padding-left: 18px;
+}
+
+.Total-css {
+  padding-left: 30px;
+}
+
+.Remove-css {
+  padding-left: 33px;
+}
+
 .carticon-product-icon {
   height: 62px;
 }
@@ -187,31 +214,30 @@
 @media (max-width: 500px) {
   .cartitems-format-main {
     display: none;
-    grid-template-columns: 0.5fr 3fr 0.5fr;
-    gap: 10px;
+  }
+  .cartitems-format-main p {
+    font-size: 10px;
+    padding: none;
   }
   .cartitems-format {
-    display: grid;
+    display: none;
   }
 
-  .buttonBox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .cartitems-quantity {
-    width: 11px;
+  .buttonBox .cartitems-quantity {
+    width: 20px;
     font-size: 13px;
-    height: 1.009em;
+    height: 15px;
   }
 
-  .decrement-button,
-  .increment-button {
-    font-size: 10px;
-    margin: 2px;
-    height: 21px;
-    width: 25px;
+  .cartitems-format-main .buttonBox span {
+    width: 12px;
+    font-size: 12px;
+  }
+
+  .buttonBox button {
+    width: 20px;
+    background-color: #e2e2e2;
+    color: black;
   }
 
   .cartitems hr {
