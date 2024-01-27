@@ -24,6 +24,7 @@ function ProductPage({ addToCart, handleIncrementQuantity }) {
         console.log(error);
       }
     };
+    window.scrollTo(0, 0);
     getOneItem();
   }, [itemId]);
 

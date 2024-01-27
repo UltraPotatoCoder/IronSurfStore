@@ -32,10 +32,6 @@ function Popular() {
             return (
               <div key={item.id}>
                 <Link
-                  onClick={() => {
-                    handleAddToCart();
-                    window.scrollTo(0, 0);
-                  }}
                   style={{ textDecoration: 'none', color: 'black' }}
                   to={`/products/${item.id}`}
                 >
