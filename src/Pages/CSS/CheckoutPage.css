@@ -253,36 +253,69 @@ button:hover {
   }
 }
 @media (max-width: 500px) {
-  .cartitems-format-main {
-    display: none;
-    grid-template-columns: 0.5fr 3fr 0.5fr;
-    gap: 10px;
-  }
-  .cartitems-format {
-    display: grid;
+  /* Default styles for screens wider than 500px */
+  .form-box {
+    max-width: 400px;
+    margin: auto;
+    margin-left: 70px;
+    padding: 50px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 50px;
   }
 
-  .buttonBox {
+  form {
     display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .button-checkout {
+    background-color: #ff4141;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background-color: #ff4141;
+  }
+
+  .checkout-total {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .checkout-total p {
+    margin-top: 10px;
+  }
+
+  .box-summary {
+    display: flex;
+  }
+
+  .everything-box {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-  }
-
-  .cartitems-quantity {
-    width: 11px;
-    font-size: 13px;
-    height: 1.009em;
-  }
-
-  .decrement-button,
-  .increment-button {
-    font-size: 10px;
-    margin: 2px;
-    height: 21px;
-    width: 25px;
-  }
-
-  .cartitems hr {
-    display: none;
   }
 }
