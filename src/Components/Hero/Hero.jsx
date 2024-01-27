@@ -11,7 +11,7 @@ function Hero() {
         <h2>NEW ARRIVALS ONLY</h2>
         <div>
           <div className='hero-hand-icon'>
-            <p>surf shop</p>
+            <p>Surf Shop</p>
             <img src={hand_icon} alt='hand_icon' />
           </div>
           <p>for a lifetime of discovery.</p>
