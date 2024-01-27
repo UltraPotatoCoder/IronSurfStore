@@ -27,7 +27,6 @@ function Navbar({ cartCount }) {
       <img
         className='img-icon'
         onClick={() => {
-          handleLinkClick();
           dropdown_toggle();
         }}
         src={menu_icon}
@@ -56,7 +55,7 @@ function Navbar({ cartCount }) {
           >
             All Products
           </Link>{' '}
-          {showHr && menu === 'allproducts' ? <hr /> : <></>}
+          {menu === 'allproducts' ? <hr /> : <></>}
         </li>
         <li
           onClick={() => {

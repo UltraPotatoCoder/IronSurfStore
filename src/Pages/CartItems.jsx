@@ -146,7 +146,9 @@ function CartItems({ addToCart, removeFromCart, removeAllItemsCross }) {
             </div>
           </div>
           <Link to='/checkout'>
-            <button>PROCEED TO CHECKOUT</button>
+            <button onClick={() => window.scrollTo(0, 0)}>
+              PROCEED TO CHECKOUT
+            </button>
           </Link>
         </div>
       </div>

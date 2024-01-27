@@ -9,13 +9,6 @@
   margin-top: 50px;
 }
 
-.thank-you-message {
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  text-align: center;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -36,7 +29,7 @@ input {
   outline: none;
 }
 
-button {
+.button-checkout {
   background-color: #ff4141;
   color: white;
   padding: 10px;

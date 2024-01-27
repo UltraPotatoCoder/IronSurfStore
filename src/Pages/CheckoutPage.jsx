@@ -2,12 +2,41 @@ import './CSS/CheckoutPage.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import hand_icon from '../assets/img/hand_icon.png';
+import loading_gif from '../assets/img/redirect-gif.gif';
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app';
 
 function checkoutItems({ cartCount, setCartCount, cartItems, setCartItems }) {
   const [checkoutItems, setCheckoutItems] = useState([]);
   const [thankYouMessage, setThankYouMessage] = useState(false);
   const navigate = useNavigate();
+
+  const ThankYouStyles = {
+    display: 'flex',
+    'flex-direction': 'column',
+    'align-items': 'center',
+    'justify-content': 'center',
+    'font-size': '50px',
+    'text-align': 'center',
+    'padding-right': '320px',
+    'padding-top': '150px',
+    'padding-bottom': '200px',
+  };
+
+  const HanglooseStyles = {
+    width: '100px',
+    'padding-top': '70px',
+  };
+
+  const LoadingStyles = {
+    width: '40px',
+    'padding-top': '200px',
+  };
+
+  const RedirectingText = {
+    'font-size': '15px',
+    'padding-top': '10px',
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -73,8 +102,11 @@ function checkoutItems({ cartCount, setCartCount, cartItems, setCartItems }) {
       )}
       <div className='box-summary'>
         {thankYouMessage ? (
-          <div className='thank-you-message'>
+          <div className='thank-you-message' style={ThankYouStyles}>
             <p>Thank you for buying at Iron Surf Store!</p>
+            <img style={HanglooseStyles} src={hand_icon} alt='hand_icon' />
+            <img style={LoadingStyles} src={loading_gif} alt='loading_gif' />
+            <p style={RedirectingText}>Redirecting Home...</p>
           </div>
         ) : (
           <div className='form-box'>
@@ -106,7 +138,9 @@ function checkoutItems({ cartCount, setCartCount, cartItems, setCartItems }) {
                   <p>Total: €{getTotalCartAmount()}</p>
                 </div>
               </div>
-              <button type='submit'>Pay Now</button>
+              <button type='submit' className='button-checkout'>
+                Pay Now
+              </button>
             </form>
           </div>
         )}
