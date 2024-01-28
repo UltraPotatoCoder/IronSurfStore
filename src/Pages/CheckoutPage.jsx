@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import hand_icon from '../assets/img/hand_icon.png';
 import loading_gif from '../assets/img/redirect-gif.gif';
+import credit_card from '../assets/img/credit-cards.png';
+import cvv_card from '../assets/img/cvv image.png';
 const API_URL_ONE = 'https://iron-surf-store.adaptable.app';
 
 function checkoutItems({ cartCount, setCartCount, cartItems, setCartItems }) {
@@ -121,6 +123,7 @@ function checkoutItems({ cartCount, setCartCount, cartItems, setCartItems }) {
               </label>
               <label>
                 Card Number:
+                <img className='credit-card' src={credit_card} alt='' />
                 <input type='text' name='cardNumber' required />
               </label>
               <label>
@@ -128,7 +131,7 @@ function checkoutItems({ cartCount, setCartCount, cartItems, setCartItems }) {
                 <input type='text' name='expirationDate' required />
               </label>
               <label>
-                CVV:
+                CVV: <img className='cvv-card' src={cvv_card} alt='' />
                 <input type='text' name='cvv' required />
               </label>
               <div className='checkout-total'>

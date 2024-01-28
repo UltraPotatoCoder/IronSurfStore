@@ -99,6 +99,14 @@ input {
   margin: 0px 40px;
   cursor: pointer;
 }
+.credit-card {
+  width: 120px;
+  padding-left: 20px;
+}
+.cvv-card {
+  width: 30px;
+  padding-left: 20px;
+}
 .cartitems-quantity {
   display: flex;
   align-items: center;
